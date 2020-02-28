@@ -8,8 +8,8 @@
  *****************************************************************************************
  *
  * File                 : hps_gpio.c
- * Author               :
- * Date                 :
+ * Author               : Aurélien Siu
+ * Date                 : 26.02.2019
  *
  * Context              : SOCF tutorial lab
  *
@@ -22,22 +22,43 @@
  *
  *
 *****************************************************************************************/
+
 #include "address_map_arm.h"
 
-#define HPS_GPIO1 HPS_BRIDGE_BASE + HPS_GPIO1_BASE
+#define HPS_GPIO1 (HPS_BRIDGE_BASE + HPS_GPIO1_BASE)
 
 #define HPS_GPIO1_54 0x1 << 25
 #define HPS_GPIO1_53 0x1 << 24
+#define GPIO_SWPORTA_DR  0x00
+#define GPIO_SWPORTA_DDR 0x04
+#define GPIO_EXT_PORTA   0X50
 
 
 int main(void){
 
-    /*
-    * TO DO
-    */
+    volatile int *gpio_swporta_dr  = (volatile int *)(HPS_GPIO1 + GPIO_SWPORTA_DR);
+    volatile int *gpio_swporta_ddr = (volatile int *)(HPS_GPIO1 + GPIO_SWPORTA_DDR);
+    volatile int *gpio_ext_swporta = (volatile int *)(HPS_GPIO1 + GPIO_EXT_PORTA);
 
-    HPS_GPIO1
+    /* Set Directions */
+    /* set GPIO 53 as output */
+    *gpio_swporta_ddr |= HPS_GPIO1_53;
+    /* test */
+    //*(int *)(0xFF709004) = 0x01000000;
+    /* set GPIO 54 as input */
+    /*gpio_swporta_ddr &= ~HPS_GPIO1_54; /* ne fonctionne pas :( */
+    *(int *)(0xFF709004) &= ~0x02000000; /* fonctionne */
 
+    while(1) {
+      /* read GPIO 54 input value and update GPIO 53 output (LED)  */
+      if((*gpio_ext_swporta) & HPS_GPIO1_54) {
+         *gpio_swporta_dr &= ~HPS_GPIO1_53;
+      } else {
+          *gpio_swporta_dr |= HPS_GPIO1_53;
+      }
+    }
+
+    return 0;
 
 
 }

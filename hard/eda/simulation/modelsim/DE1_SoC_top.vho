@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition"
 
--- DATE "02/21/2020 17:32:11"
+-- DATE "02/28/2020 17:22:28"
 
 -- 
 -- Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -42,78 +42,78 @@ ENTITY 	DE1_SoC_top IS
 	CLOCK2_50_i : IN std_logic;
 	CLOCK3_50_i : IN std_logic;
 	CLOCK4_50_i : IN std_logic;
-	ADC_CS_N_o : OUT std_logic;
-	ADC_DIN_o : OUT std_logic;
+	ADC_CS_N_o : BUFFER std_logic;
+	ADC_DIN_o : BUFFER std_logic;
 	ADC_DOUT_i : IN std_logic;
-	ADC_SCLK_o : OUT std_logic;
-	AUD_ADCLRCK_io : INOUT std_logic;
+	ADC_SCLK_o : BUFFER std_logic;
+	AUD_ADCLRCK_io : BUFFER std_logic;
 	AUD_ADCDAT_i : IN std_logic;
-	AUD_DACLRCK_io : INOUT std_logic;
-	AUD_DACDAT_o : OUT std_logic;
-	AUD_XCK_o : OUT std_logic;
-	AUD_BCLK_io : INOUT std_logic;
-	DRAM_ADDR_o : OUT std_logic_vector(12 DOWNTO 0);
-	DRAM_BA_o : OUT std_logic_vector(1 DOWNTO 0);
-	DRAM_CAS_N_o : OUT std_logic;
-	DRAM_CKE_o : OUT std_logic;
-	DRAM_CLK_o : OUT std_logic;
-	DRAM_CS_N_o : OUT std_logic;
-	DRAM_DQ_io : INOUT std_logic_vector(15 DOWNTO 0);
-	DRAM_LDQM_o : OUT std_logic;
-	DRAM_RAS_N_o : OUT std_logic;
-	DRAM_UDQM_o : OUT std_logic;
-	DRAM_WE_N_o : OUT std_logic;
-	FPGA_I2C_SCLK_o : OUT std_logic;
-	FPGA_I2C_SDAT_io : INOUT std_logic;
-	GPIO_0_io : INOUT std_logic_vector(35 DOWNTO 0);
-	GPIO_1_io : INOUT std_logic_vector(35 DOWNTO 0);
-	HEX0_o : OUT std_logic_vector(6 DOWNTO 0);
-	HEX1_o : OUT std_logic_vector(6 DOWNTO 0);
-	HEX2_o : OUT std_logic_vector(6 DOWNTO 0);
-	HEX3_o : OUT std_logic_vector(6 DOWNTO 0);
-	HEX4_o : OUT std_logic_vector(6 DOWNTO 0);
-	HEX5_o : OUT std_logic_vector(6 DOWNTO 0);
+	AUD_DACLRCK_io : BUFFER std_logic;
+	AUD_DACDAT_o : BUFFER std_logic;
+	AUD_XCK_o : BUFFER std_logic;
+	AUD_BCLK_io : BUFFER std_logic;
+	DRAM_ADDR_o : BUFFER std_logic_vector(12 DOWNTO 0);
+	DRAM_BA_o : BUFFER std_logic_vector(1 DOWNTO 0);
+	DRAM_CAS_N_o : BUFFER std_logic;
+	DRAM_CKE_o : BUFFER std_logic;
+	DRAM_CLK_o : BUFFER std_logic;
+	DRAM_CS_N_o : BUFFER std_logic;
+	DRAM_DQ_io : BUFFER std_logic_vector(15 DOWNTO 0);
+	DRAM_LDQM_o : BUFFER std_logic;
+	DRAM_RAS_N_o : BUFFER std_logic;
+	DRAM_UDQM_o : BUFFER std_logic;
+	DRAM_WE_N_o : BUFFER std_logic;
+	FPGA_I2C_SCLK_o : BUFFER std_logic;
+	FPGA_I2C_SDAT_io : BUFFER std_logic;
+	GPIO_0_io : BUFFER std_logic_vector(35 DOWNTO 0);
+	GPIO_1_io : BUFFER std_logic_vector(35 DOWNTO 0);
+	HEX0_o : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX1_o : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX2_o : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX3_o : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX4_o : BUFFER std_logic_vector(6 DOWNTO 0);
+	HEX5_o : BUFFER std_logic_vector(6 DOWNTO 0);
 	IRDA_RXD_i : IN std_logic;
-	IRDA_TXD_o : OUT std_logic;
+	IRDA_TXD_o : BUFFER std_logic;
 	KEY_i : IN std_logic_vector(3 DOWNTO 0);
-	LEDR_o : OUT std_logic_vector(9 DOWNTO 0);
-	PS2_CLK_io : INOUT std_logic;
-	PS2_DAT_io : INOUT std_logic;
-	PS2_CLK2_io : INOUT std_logic;
-	PS2_DAT2_io : INOUT std_logic;
+	LEDR_o : BUFFER std_logic_vector(9 DOWNTO 0);
+	PS2_CLK_io : BUFFER std_logic;
+	PS2_DAT_io : BUFFER std_logic;
+	PS2_CLK2_io : BUFFER std_logic;
+	PS2_DAT2_io : BUFFER std_logic;
 	SW_i : IN std_logic_vector(9 DOWNTO 0);
 	TD_CLK27_i : IN std_logic;
 	TD_DATA_i : IN std_logic_vector(7 DOWNTO 0);
 	TD_HS_i : IN std_logic;
-	TD_RESET_N_o : OUT std_logic;
+	TD_RESET_N_o : BUFFER std_logic;
 	TD_VS_i : IN std_logic;
-	VGA_R_o : OUT std_logic_vector(7 DOWNTO 0);
-	VGA_G_o : OUT std_logic_vector(7 DOWNTO 0);
-	VGA_B_o : OUT std_logic_vector(7 DOWNTO 0);
-	VGA_CLK_o : OUT std_logic;
-	VGA_SYNC_N_o : OUT std_logic;
-	VGA_BLANK_N_o : OUT std_logic;
-	VGA_HS_o : OUT std_logic;
-	VGA_VS_o : OUT std_logic;
-	HPS_DDR3_ADDR_o : OUT std_logic_vector(14 DOWNTO 0);
-	HPS_DDR3_BA_o : OUT std_logic_vector(2 DOWNTO 0);
-	HPS_DDR3_CAS_N_o : OUT std_logic;
-	HPS_DDR3_CKE_o : OUT std_logic;
-	HPS_DDR3_CK_N_o : OUT std_logic;
-	HPS_DDR3_CK_P_o : OUT std_logic;
-	HPS_DDR3_CS_N_o : OUT std_logic;
-	HPS_DDR3_DM_o : OUT std_logic_vector(3 DOWNTO 0);
-	HPS_DDR3_DQ_io : INOUT std_logic_vector(31 DOWNTO 0);
-	HPS_DDR3_DQS_N_io : INOUT std_logic_vector(3 DOWNTO 0);
-	HPS_DDR3_DQS_P_io : INOUT std_logic_vector(3 DOWNTO 0);
-	HPS_DDR3_ODT_o : OUT std_logic;
-	HPS_DDR3_RAS_N_o : OUT std_logic;
-	HPS_DDR3_RESET_N_o : OUT std_logic;
+	VGA_R_o : BUFFER std_logic_vector(7 DOWNTO 0);
+	VGA_G_o : BUFFER std_logic_vector(7 DOWNTO 0);
+	VGA_B_o : BUFFER std_logic_vector(7 DOWNTO 0);
+	VGA_CLK_o : BUFFER std_logic;
+	VGA_SYNC_N_o : BUFFER std_logic;
+	VGA_BLANK_N_o : BUFFER std_logic;
+	VGA_HS_o : BUFFER std_logic;
+	VGA_VS_o : BUFFER std_logic;
+	HPS_DDR3_ADDR_o : BUFFER std_logic_vector(14 DOWNTO 0);
+	HPS_DDR3_BA_o : BUFFER std_logic_vector(2 DOWNTO 0);
+	HPS_DDR3_CAS_N_o : BUFFER std_logic;
+	HPS_DDR3_CKE_o : BUFFER std_logic;
+	HPS_DDR3_CK_N_o : BUFFER std_logic;
+	HPS_DDR3_CK_P_o : BUFFER std_logic;
+	HPS_DDR3_CS_N_o : BUFFER std_logic;
+	HPS_DDR3_DM_o : BUFFER std_logic_vector(3 DOWNTO 0);
+	HPS_DDR3_DQ_io : BUFFER std_logic_vector(31 DOWNTO 0);
+	HPS_DDR3_DQS_N_io : BUFFER std_logic_vector(3 DOWNTO 0);
+	HPS_DDR3_DQS_P_io : BUFFER std_logic_vector(3 DOWNTO 0);
+	HPS_DDR3_ODT_o : BUFFER std_logic;
+	HPS_DDR3_RAS_N_o : BUFFER std_logic;
+	HPS_DDR3_RESET_N_o : BUFFER std_logic;
 	HPS_DDR3_RZQ_i : IN std_logic;
-	HPS_DDR3_WE_N_o : OUT std_logic;
-	HPS_KEY_io : INOUT std_logic;
-	HPS_LED_io : INOUT std_logic;
-	FAN_CTRL_o : OUT std_logic
+	HPS_DDR3_WE_N_o : BUFFER std_logic;
+	HPS_KEY_io : BUFFER std_logic;
+	HPS_LED_io : BUFFER std_logic;
+	FAN_CTRL_o : BUFFER std_logic
 	);
 END DE1_SoC_top;
 
@@ -453,20 +453,27 @@ SIGNAL ww_ADC_CS_N_o : std_logic;
 SIGNAL ww_ADC_DIN_o : std_logic;
 SIGNAL ww_ADC_DOUT_i : std_logic;
 SIGNAL ww_ADC_SCLK_o : std_logic;
+SIGNAL ww_AUD_ADCLRCK_io : std_logic;
 SIGNAL ww_AUD_ADCDAT_i : std_logic;
+SIGNAL ww_AUD_DACLRCK_io : std_logic;
 SIGNAL ww_AUD_DACDAT_o : std_logic;
 SIGNAL ww_AUD_XCK_o : std_logic;
+SIGNAL ww_AUD_BCLK_io : std_logic;
 SIGNAL ww_DRAM_ADDR_o : std_logic_vector(12 DOWNTO 0);
 SIGNAL ww_DRAM_BA_o : std_logic_vector(1 DOWNTO 0);
 SIGNAL ww_DRAM_CAS_N_o : std_logic;
 SIGNAL ww_DRAM_CKE_o : std_logic;
 SIGNAL ww_DRAM_CLK_o : std_logic;
 SIGNAL ww_DRAM_CS_N_o : std_logic;
+SIGNAL ww_DRAM_DQ_io : std_logic_vector(15 DOWNTO 0);
 SIGNAL ww_DRAM_LDQM_o : std_logic;
 SIGNAL ww_DRAM_RAS_N_o : std_logic;
 SIGNAL ww_DRAM_UDQM_o : std_logic;
 SIGNAL ww_DRAM_WE_N_o : std_logic;
 SIGNAL ww_FPGA_I2C_SCLK_o : std_logic;
+SIGNAL ww_FPGA_I2C_SDAT_io : std_logic;
+SIGNAL ww_GPIO_0_io : std_logic_vector(35 DOWNTO 0);
+SIGNAL ww_GPIO_1_io : std_logic_vector(35 DOWNTO 0);
 SIGNAL ww_HEX0_o : std_logic_vector(6 DOWNTO 0);
 SIGNAL ww_HEX1_o : std_logic_vector(6 DOWNTO 0);
 SIGNAL ww_HEX2_o : std_logic_vector(6 DOWNTO 0);
@@ -477,6 +484,10 @@ SIGNAL ww_IRDA_RXD_i : std_logic;
 SIGNAL ww_IRDA_TXD_o : std_logic;
 SIGNAL ww_KEY_i : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_LEDR_o : std_logic_vector(9 DOWNTO 0);
+SIGNAL ww_PS2_CLK_io : std_logic;
+SIGNAL ww_PS2_DAT_io : std_logic;
+SIGNAL ww_PS2_CLK2_io : std_logic;
+SIGNAL ww_PS2_DAT2_io : std_logic;
 SIGNAL ww_SW_i : std_logic_vector(9 DOWNTO 0);
 SIGNAL ww_TD_CLK27_i : std_logic;
 SIGNAL ww_TD_DATA_i : std_logic_vector(7 DOWNTO 0);
@@ -499,11 +510,16 @@ SIGNAL ww_HPS_DDR3_CK_N_o : std_logic;
 SIGNAL ww_HPS_DDR3_CK_P_o : std_logic;
 SIGNAL ww_HPS_DDR3_CS_N_o : std_logic;
 SIGNAL ww_HPS_DDR3_DM_o : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_HPS_DDR3_DQ_io : std_logic_vector(31 DOWNTO 0);
+SIGNAL ww_HPS_DDR3_DQS_N_io : std_logic_vector(3 DOWNTO 0);
+SIGNAL ww_HPS_DDR3_DQS_P_io : std_logic_vector(3 DOWNTO 0);
 SIGNAL ww_HPS_DDR3_ODT_o : std_logic;
 SIGNAL ww_HPS_DDR3_RAS_N_o : std_logic;
 SIGNAL ww_HPS_DDR3_RESET_N_o : std_logic;
 SIGNAL ww_HPS_DDR3_RZQ_i : std_logic;
 SIGNAL ww_HPS_DDR3_WE_N_o : std_logic;
+SIGNAL ww_HPS_KEY_io : std_logic;
+SIGNAL ww_HPS_LED_io : std_logic;
 SIGNAL ww_FAN_CTRL_o : std_logic;
 SIGNAL \System|hps_0|fpga_interfaces|tpiu_TRACE_DATA_bus\ : std_logic_vector(31 DOWNTO 0);
 SIGNAL \System|hps_0|fpga_interfaces|boot_from_fpga_BSEL_bus\ : std_logic_vector(2 DOWNTO 0);
@@ -2512,6 +2528,10 @@ SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3]
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].dq_outputenabledelaysetting_dlc\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].dq_inputdelaysetting_dlc\ : std_logic_vector(4 DOWNTO 0);
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].dq_inputdelaysetting_dlc\ : std_logic_vector(4 DOWNTO 0);
+SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ : std_logic;
+SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ : std_logic;
+SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ : std_logic;
+SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ : std_logic;
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|memphy_ldc|ALT_INV_leveled_dqs_clocks\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_diff_oe_bar\ : std_logic;
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_diff_oe\ : std_logic;
@@ -2557,10 +2577,6 @@ SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|ALT_INV_phy_ddio_dq
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|ALT_INV_phy_ddio_dqoe\ : std_logic_vector(69 DOWNTO 0);
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|uaddr_cmd_pads|clock_gen[0].uclk_generator|ALT_INV_wire_pseudo_diffa_oebout\ : std_logic_vector(0 DOWNTO 0);
 SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|uaddr_cmd_pads|clock_gen[0].uclk_generator|ALT_INV_wire_pseudo_diffa_oeout\ : std_logic_vector(0 DOWNTO 0);
-SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ : std_logic;
-SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ : std_logic;
-SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ : std_logic;
-SIGNAL \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ : std_logic;
 
 BEGIN
 
@@ -2572,20 +2588,27 @@ ADC_CS_N_o <= ww_ADC_CS_N_o;
 ADC_DIN_o <= ww_ADC_DIN_o;
 ww_ADC_DOUT_i <= ADC_DOUT_i;
 ADC_SCLK_o <= ww_ADC_SCLK_o;
+AUD_ADCLRCK_io <= ww_AUD_ADCLRCK_io;
 ww_AUD_ADCDAT_i <= AUD_ADCDAT_i;
+AUD_DACLRCK_io <= ww_AUD_DACLRCK_io;
 AUD_DACDAT_o <= ww_AUD_DACDAT_o;
 AUD_XCK_o <= ww_AUD_XCK_o;
+AUD_BCLK_io <= ww_AUD_BCLK_io;
 DRAM_ADDR_o <= ww_DRAM_ADDR_o;
 DRAM_BA_o <= ww_DRAM_BA_o;
 DRAM_CAS_N_o <= ww_DRAM_CAS_N_o;
 DRAM_CKE_o <= ww_DRAM_CKE_o;
 DRAM_CLK_o <= ww_DRAM_CLK_o;
 DRAM_CS_N_o <= ww_DRAM_CS_N_o;
+DRAM_DQ_io <= ww_DRAM_DQ_io;
 DRAM_LDQM_o <= ww_DRAM_LDQM_o;
 DRAM_RAS_N_o <= ww_DRAM_RAS_N_o;
 DRAM_UDQM_o <= ww_DRAM_UDQM_o;
 DRAM_WE_N_o <= ww_DRAM_WE_N_o;
 FPGA_I2C_SCLK_o <= ww_FPGA_I2C_SCLK_o;
+FPGA_I2C_SDAT_io <= ww_FPGA_I2C_SDAT_io;
+GPIO_0_io <= ww_GPIO_0_io;
+GPIO_1_io <= ww_GPIO_1_io;
 HEX0_o <= ww_HEX0_o;
 HEX1_o <= ww_HEX1_o;
 HEX2_o <= ww_HEX2_o;
@@ -2596,6 +2619,10 @@ ww_IRDA_RXD_i <= IRDA_RXD_i;
 IRDA_TXD_o <= ww_IRDA_TXD_o;
 ww_KEY_i <= KEY_i;
 LEDR_o <= ww_LEDR_o;
+PS2_CLK_io <= ww_PS2_CLK_io;
+PS2_DAT_io <= ww_PS2_DAT_io;
+PS2_CLK2_io <= ww_PS2_CLK2_io;
+PS2_DAT2_io <= ww_PS2_DAT2_io;
 ww_SW_i <= SW_i;
 ww_TD_CLK27_i <= TD_CLK27_i;
 ww_TD_DATA_i <= TD_DATA_i;
@@ -2618,11 +2645,16 @@ HPS_DDR3_CK_N_o <= ww_HPS_DDR3_CK_N_o;
 HPS_DDR3_CK_P_o <= ww_HPS_DDR3_CK_P_o;
 HPS_DDR3_CS_N_o <= ww_HPS_DDR3_CS_N_o;
 HPS_DDR3_DM_o <= ww_HPS_DDR3_DM_o;
+HPS_DDR3_DQ_io <= ww_HPS_DDR3_DQ_io;
+HPS_DDR3_DQS_N_io <= ww_HPS_DDR3_DQS_N_io;
+HPS_DDR3_DQS_P_io <= ww_HPS_DDR3_DQS_P_io;
 HPS_DDR3_ODT_o <= ww_HPS_DDR3_ODT_o;
 HPS_DDR3_RAS_N_o <= ww_HPS_DDR3_RAS_N_o;
 HPS_DDR3_RESET_N_o <= ww_HPS_DDR3_RESET_N_o;
 ww_HPS_DDR3_RZQ_i <= HPS_DDR3_RZQ_i;
 HPS_DDR3_WE_N_o <= ww_HPS_DDR3_WE_N_o;
+HPS_KEY_io <= ww_HPS_KEY_io;
+HPS_LED_io <= ww_HPS_LED_io;
 FAN_CTRL_o <= ww_FAN_CTRL_o;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
@@ -7236,6 +7268,10 @@ gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gn
 \HPS_DDR3_DM_o[2]~_s2p_logic_blkO_SERIESTERMINATIONCONTROL13\ <= \HPS_DDR3_DM_o[2]~_s2p_logic_blk_SERIESTERMINATIONCONTROL_bus\(13);
 \HPS_DDR3_DM_o[2]~_s2p_logic_blkO_SERIESTERMINATIONCONTROL14\ <= \HPS_DDR3_DM_o[2]~_s2p_logic_blk_SERIESTERMINATIONCONTROL_bus\(14);
 \HPS_DDR3_DM_o[2]~_s2p_logic_blkO_SERIESTERMINATIONCONTROL15\ <= \HPS_DDR3_DM_o[2]~_s2p_logic_blk_SERIESTERMINATIONCONTROL_bus\(15);
+\System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|dqsbusout\;
+\System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|dqsbusout\;
+\System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|dqsbusout\;
+\System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|dqsbusout\;
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|memphy_ldc|ALT_INV_leveled_dqs_clocks\(0) <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|memphy_ldc|leveled_dqs_clocks\(0);
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_diff_oe_bar\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|diff_oe_bar\;
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_diff_oe\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|diff_oe\;
@@ -7351,10 +7387,6 @@ gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gnd & gn
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|ALT_INV_phy_ddio_dqoe\(0) <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|phy_ddio_dqoe\(0);
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|uaddr_cmd_pads|clock_gen[0].uclk_generator|ALT_INV_wire_pseudo_diffa_oebout\(0) <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|uaddr_cmd_pads|clock_gen[0].uclk_generator|wire_pseudo_diffa_oebout\(0);
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|uaddr_cmd_pads|clock_gen[0].uclk_generator|ALT_INV_wire_pseudo_diffa_oeout\(0) <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|uaddr_cmd_pads|clock_gen[0].uclk_generator|wire_pseudo_diffa_oeout\(0);
-\System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|dqsbusout\;
-\System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|dqsbusout\;
-\System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|dqsbusout\;
-\System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|ALT_INV_dqsbusout\ <= NOT \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|dqsbusout\;
 
 -- Location: IOOBUF_X89_Y42_N79
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|extra_output_pad_gen[0].obuf_1\ : cyclonev_io_obuf
@@ -9257,7 +9289,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => AUD_ADCLRCK_io);
+	o => ww_AUD_ADCLRCK_io);
 
 -- Location: IOOBUF_X24_Y81_N2
 \AUD_DACLRCK_io~output\ : cyclonev_io_obuf
@@ -9270,7 +9302,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => AUD_DACLRCK_io);
+	o => ww_AUD_DACLRCK_io);
 
 -- Location: IOOBUF_X16_Y81_N19
 \AUD_BCLK_io~output\ : cyclonev_io_obuf
@@ -9283,7 +9315,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => AUD_BCLK_io);
+	o => ww_AUD_BCLK_io);
 
 -- Location: IOOBUF_X24_Y0_N53
 \DRAM_DQ_io[0]~output\ : cyclonev_io_obuf
@@ -9296,7 +9328,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(0));
+	o => ww_DRAM_DQ_io(0));
 
 -- Location: IOOBUF_X26_Y0_N93
 \DRAM_DQ_io[1]~output\ : cyclonev_io_obuf
@@ -9309,7 +9341,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(1));
+	o => ww_DRAM_DQ_io(1));
 
 -- Location: IOOBUF_X28_Y0_N36
 \DRAM_DQ_io[2]~output\ : cyclonev_io_obuf
@@ -9322,7 +9354,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(2));
+	o => ww_DRAM_DQ_io(2));
 
 -- Location: IOOBUF_X28_Y0_N53
 \DRAM_DQ_io[3]~output\ : cyclonev_io_obuf
@@ -9335,7 +9367,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(3));
+	o => ww_DRAM_DQ_io(3));
 
 -- Location: IOOBUF_X30_Y0_N53
 \DRAM_DQ_io[4]~output\ : cyclonev_io_obuf
@@ -9348,7 +9380,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(4));
+	o => ww_DRAM_DQ_io(4));
 
 -- Location: IOOBUF_X18_Y0_N76
 \DRAM_DQ_io[5]~output\ : cyclonev_io_obuf
@@ -9361,7 +9393,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(5));
+	o => ww_DRAM_DQ_io(5));
 
 -- Location: IOOBUF_X34_Y0_N59
 \DRAM_DQ_io[6]~output\ : cyclonev_io_obuf
@@ -9374,7 +9406,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(6));
+	o => ww_DRAM_DQ_io(6));
 
 -- Location: IOOBUF_X34_Y0_N42
 \DRAM_DQ_io[7]~output\ : cyclonev_io_obuf
@@ -9387,7 +9419,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(7));
+	o => ww_DRAM_DQ_io(7));
 
 -- Location: IOOBUF_X34_Y0_N76
 \DRAM_DQ_io[8]~output\ : cyclonev_io_obuf
@@ -9400,7 +9432,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(8));
+	o => ww_DRAM_DQ_io(8));
 
 -- Location: IOOBUF_X34_Y0_N93
 \DRAM_DQ_io[9]~output\ : cyclonev_io_obuf
@@ -9413,7 +9445,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(9));
+	o => ww_DRAM_DQ_io(9));
 
 -- Location: IOOBUF_X30_Y0_N36
 \DRAM_DQ_io[10]~output\ : cyclonev_io_obuf
@@ -9426,7 +9458,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(10));
+	o => ww_DRAM_DQ_io(10));
 
 -- Location: IOOBUF_X18_Y0_N93
 \DRAM_DQ_io[11]~output\ : cyclonev_io_obuf
@@ -9439,7 +9471,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(11));
+	o => ww_DRAM_DQ_io(11));
 
 -- Location: IOOBUF_X32_Y0_N53
 \DRAM_DQ_io[12]~output\ : cyclonev_io_obuf
@@ -9452,7 +9484,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(12));
+	o => ww_DRAM_DQ_io(12));
 
 -- Location: IOOBUF_X32_Y0_N36
 \DRAM_DQ_io[13]~output\ : cyclonev_io_obuf
@@ -9465,7 +9497,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(13));
+	o => ww_DRAM_DQ_io(13));
 
 -- Location: IOOBUF_X26_Y0_N76
 \DRAM_DQ_io[14]~output\ : cyclonev_io_obuf
@@ -9478,7 +9510,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(14));
+	o => ww_DRAM_DQ_io(14));
 
 -- Location: IOOBUF_X24_Y0_N36
 \DRAM_DQ_io[15]~output\ : cyclonev_io_obuf
@@ -9491,7 +9523,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => DRAM_DQ_io(15));
+	o => ww_DRAM_DQ_io(15));
 
 -- Location: IOOBUF_X12_Y81_N2
 \FPGA_I2C_SDAT_io~output\ : cyclonev_io_obuf
@@ -9504,7 +9536,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => FPGA_I2C_SDAT_io);
+	o => ww_FPGA_I2C_SDAT_io);
 
 -- Location: IOOBUF_X64_Y0_N2
 \GPIO_0_io[0]~output\ : cyclonev_io_obuf
@@ -9517,7 +9549,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(0));
+	o => ww_GPIO_0_io(0));
 
 -- Location: IOOBUF_X68_Y0_N2
 \GPIO_0_io[1]~output\ : cyclonev_io_obuf
@@ -9530,7 +9562,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(1));
+	o => ww_GPIO_0_io(1));
 
 -- Location: IOOBUF_X64_Y0_N19
 \GPIO_0_io[2]~output\ : cyclonev_io_obuf
@@ -9543,7 +9575,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(2));
+	o => ww_GPIO_0_io(2));
 
 -- Location: IOOBUF_X72_Y0_N2
 \GPIO_0_io[3]~output\ : cyclonev_io_obuf
@@ -9556,7 +9588,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(3));
+	o => ww_GPIO_0_io(3));
 
 -- Location: IOOBUF_X54_Y0_N53
 \GPIO_0_io[4]~output\ : cyclonev_io_obuf
@@ -9569,7 +9601,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(4));
+	o => ww_GPIO_0_io(4));
 
 -- Location: IOOBUF_X58_Y0_N59
 \GPIO_0_io[5]~output\ : cyclonev_io_obuf
@@ -9582,7 +9614,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(5));
+	o => ww_GPIO_0_io(5));
 
 -- Location: IOOBUF_X60_Y0_N53
 \GPIO_0_io[6]~output\ : cyclonev_io_obuf
@@ -9595,7 +9627,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(6));
+	o => ww_GPIO_0_io(6));
 
 -- Location: IOOBUF_X60_Y0_N36
 \GPIO_0_io[7]~output\ : cyclonev_io_obuf
@@ -9608,7 +9640,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(7));
+	o => ww_GPIO_0_io(7));
 
 -- Location: IOOBUF_X58_Y0_N42
 \GPIO_0_io[8]~output\ : cyclonev_io_obuf
@@ -9621,7 +9653,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(8));
+	o => ww_GPIO_0_io(8));
 
 -- Location: IOOBUF_X54_Y0_N36
 \GPIO_0_io[9]~output\ : cyclonev_io_obuf
@@ -9634,7 +9666,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(9));
+	o => ww_GPIO_0_io(9));
 
 -- Location: IOOBUF_X56_Y0_N53
 \GPIO_0_io[10]~output\ : cyclonev_io_obuf
@@ -9647,7 +9679,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(10));
+	o => ww_GPIO_0_io(10));
 
 -- Location: IOOBUF_X56_Y0_N36
 \GPIO_0_io[11]~output\ : cyclonev_io_obuf
@@ -9660,7 +9692,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(11));
+	o => ww_GPIO_0_io(11));
 
 -- Location: IOOBUF_X50_Y0_N76
 \GPIO_0_io[12]~output\ : cyclonev_io_obuf
@@ -9673,7 +9705,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(12));
+	o => ww_GPIO_0_io(12));
 
 -- Location: IOOBUF_X52_Y0_N36
 \GPIO_0_io[13]~output\ : cyclonev_io_obuf
@@ -9686,7 +9718,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(13));
+	o => ww_GPIO_0_io(13));
 
 -- Location: IOOBUF_X52_Y0_N53
 \GPIO_0_io[14]~output\ : cyclonev_io_obuf
@@ -9699,7 +9731,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(14));
+	o => ww_GPIO_0_io(14));
 
 -- Location: IOOBUF_X50_Y0_N93
 \GPIO_0_io[15]~output\ : cyclonev_io_obuf
@@ -9712,7 +9744,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(15));
+	o => ww_GPIO_0_io(15));
 
 -- Location: IOOBUF_X68_Y0_N19
 \GPIO_0_io[16]~output\ : cyclonev_io_obuf
@@ -9725,7 +9757,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(16));
+	o => ww_GPIO_0_io(16));
 
 -- Location: IOOBUF_X72_Y0_N19
 \GPIO_0_io[17]~output\ : cyclonev_io_obuf
@@ -9738,7 +9770,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(17));
+	o => ww_GPIO_0_io(17));
 
 -- Location: IOOBUF_X50_Y0_N42
 \GPIO_0_io[18]~output\ : cyclonev_io_obuf
@@ -9751,7 +9783,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(18));
+	o => ww_GPIO_0_io(18));
 
 -- Location: IOOBUF_X76_Y0_N2
 \GPIO_0_io[19]~output\ : cyclonev_io_obuf
@@ -9764,7 +9796,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(19));
+	o => ww_GPIO_0_io(19));
 
 -- Location: IOOBUF_X58_Y0_N93
 \GPIO_0_io[20]~output\ : cyclonev_io_obuf
@@ -9777,7 +9809,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(20));
+	o => ww_GPIO_0_io(20));
 
 -- Location: IOOBUF_X62_Y0_N36
 \GPIO_0_io[21]~output\ : cyclonev_io_obuf
@@ -9790,7 +9822,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(21));
+	o => ww_GPIO_0_io(21));
 
 -- Location: IOOBUF_X54_Y0_N19
 \GPIO_0_io[22]~output\ : cyclonev_io_obuf
@@ -9803,7 +9835,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(22));
+	o => ww_GPIO_0_io(22));
 
 -- Location: IOOBUF_X68_Y0_N36
 \GPIO_0_io[23]~output\ : cyclonev_io_obuf
@@ -9816,7 +9848,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(23));
+	o => ww_GPIO_0_io(23));
 
 -- Location: IOOBUF_X76_Y0_N19
 \GPIO_0_io[24]~output\ : cyclonev_io_obuf
@@ -9829,7 +9861,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(24));
+	o => ww_GPIO_0_io(24));
 
 -- Location: IOOBUF_X82_Y0_N42
 \GPIO_0_io[25]~output\ : cyclonev_io_obuf
@@ -9842,7 +9874,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(25));
+	o => ww_GPIO_0_io(25));
 
 -- Location: IOOBUF_X66_Y0_N42
 \GPIO_0_io[26]~output\ : cyclonev_io_obuf
@@ -9855,7 +9887,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(26));
+	o => ww_GPIO_0_io(26));
 
 -- Location: IOOBUF_X66_Y0_N59
 \GPIO_0_io[27]~output\ : cyclonev_io_obuf
@@ -9868,7 +9900,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(27));
+	o => ww_GPIO_0_io(27));
 
 -- Location: IOOBUF_X70_Y0_N2
 \GPIO_0_io[28]~output\ : cyclonev_io_obuf
@@ -9881,7 +9913,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(28));
+	o => ww_GPIO_0_io(28));
 
 -- Location: IOOBUF_X70_Y0_N19
 \GPIO_0_io[29]~output\ : cyclonev_io_obuf
@@ -9894,7 +9926,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(29));
+	o => ww_GPIO_0_io(29));
 
 -- Location: IOOBUF_X62_Y0_N2
 \GPIO_0_io[30]~output\ : cyclonev_io_obuf
@@ -9907,7 +9939,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(30));
+	o => ww_GPIO_0_io(30));
 
 -- Location: IOOBUF_X54_Y0_N2
 \GPIO_0_io[31]~output\ : cyclonev_io_obuf
@@ -9920,7 +9952,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(31));
+	o => ww_GPIO_0_io(31));
 
 -- Location: IOOBUF_X50_Y0_N59
 \GPIO_0_io[32]~output\ : cyclonev_io_obuf
@@ -9933,7 +9965,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(32));
+	o => ww_GPIO_0_io(32));
 
 -- Location: IOOBUF_X62_Y0_N19
 \GPIO_0_io[33]~output\ : cyclonev_io_obuf
@@ -9946,7 +9978,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(33));
+	o => ww_GPIO_0_io(33));
 
 -- Location: IOOBUF_X58_Y0_N76
 \GPIO_0_io[34]~output\ : cyclonev_io_obuf
@@ -9959,7 +9991,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(34));
+	o => ww_GPIO_0_io(34));
 
 -- Location: IOOBUF_X62_Y0_N53
 \GPIO_0_io[35]~output\ : cyclonev_io_obuf
@@ -9972,7 +10004,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_0_io(35));
+	o => ww_GPIO_0_io(35));
 
 -- Location: IOOBUF_X56_Y0_N19
 \GPIO_1_io[0]~output\ : cyclonev_io_obuf
@@ -9985,7 +10017,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(0));
+	o => ww_GPIO_1_io(0));
 
 -- Location: IOOBUF_X88_Y0_N3
 \GPIO_1_io[1]~output\ : cyclonev_io_obuf
@@ -9998,7 +10030,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(1));
+	o => ww_GPIO_1_io(1));
 
 -- Location: IOOBUF_X88_Y0_N20
 \GPIO_1_io[2]~output\ : cyclonev_io_obuf
@@ -10011,7 +10043,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(2));
+	o => ww_GPIO_1_io(2));
 
 -- Location: IOOBUF_X86_Y0_N19
 \GPIO_1_io[3]~output\ : cyclonev_io_obuf
@@ -10024,7 +10056,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(3));
+	o => ww_GPIO_1_io(3));
 
 -- Location: IOOBUF_X88_Y0_N37
 \GPIO_1_io[4]~output\ : cyclonev_io_obuf
@@ -10037,7 +10069,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(4));
+	o => ww_GPIO_1_io(4));
 
 -- Location: IOOBUF_X78_Y0_N19
 \GPIO_1_io[5]~output\ : cyclonev_io_obuf
@@ -10050,7 +10082,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(5));
+	o => ww_GPIO_1_io(5));
 
 -- Location: IOOBUF_X88_Y0_N54
 \GPIO_1_io[6]~output\ : cyclonev_io_obuf
@@ -10063,7 +10095,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(6));
+	o => ww_GPIO_1_io(6));
 
 -- Location: IOOBUF_X86_Y0_N36
 \GPIO_1_io[7]~output\ : cyclonev_io_obuf
@@ -10076,7 +10108,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(7));
+	o => ww_GPIO_1_io(7));
 
 -- Location: IOOBUF_X86_Y0_N53
 \GPIO_1_io[8]~output\ : cyclonev_io_obuf
@@ -10089,7 +10121,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(8));
+	o => ww_GPIO_1_io(8));
 
 -- Location: IOOBUF_X78_Y0_N36
 \GPIO_1_io[9]~output\ : cyclonev_io_obuf
@@ -10102,7 +10134,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(9));
+	o => ww_GPIO_1_io(9));
 
 -- Location: IOOBUF_X84_Y0_N36
 \GPIO_1_io[10]~output\ : cyclonev_io_obuf
@@ -10115,7 +10147,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(10));
+	o => ww_GPIO_1_io(10));
 
 -- Location: IOOBUF_X64_Y0_N53
 \GPIO_1_io[11]~output\ : cyclonev_io_obuf
@@ -10128,7 +10160,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(11));
+	o => ww_GPIO_1_io(11));
 
 -- Location: IOOBUF_X84_Y0_N53
 \GPIO_1_io[12]~output\ : cyclonev_io_obuf
@@ -10141,7 +10173,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(12));
+	o => ww_GPIO_1_io(12));
 
 -- Location: IOOBUF_X80_Y0_N36
 \GPIO_1_io[13]~output\ : cyclonev_io_obuf
@@ -10154,7 +10186,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(13));
+	o => ww_GPIO_1_io(13));
 
 -- Location: IOOBUF_X82_Y0_N93
 \GPIO_1_io[14]~output\ : cyclonev_io_obuf
@@ -10167,7 +10199,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(14));
+	o => ww_GPIO_1_io(14));
 
 -- Location: IOOBUF_X82_Y0_N76
 \GPIO_1_io[15]~output\ : cyclonev_io_obuf
@@ -10180,7 +10212,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(15));
+	o => ww_GPIO_1_io(15));
 
 -- Location: IOOBUF_X80_Y0_N53
 \GPIO_1_io[16]~output\ : cyclonev_io_obuf
@@ -10193,7 +10225,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(16));
+	o => ww_GPIO_1_io(16));
 
 -- Location: IOOBUF_X76_Y0_N36
 \GPIO_1_io[17]~output\ : cyclonev_io_obuf
@@ -10206,7 +10238,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(17));
+	o => ww_GPIO_1_io(17));
 
 -- Location: IOOBUF_X76_Y0_N53
 \GPIO_1_io[18]~output\ : cyclonev_io_obuf
@@ -10219,7 +10251,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(18));
+	o => ww_GPIO_1_io(18));
 
 -- Location: IOOBUF_X78_Y0_N53
 \GPIO_1_io[19]~output\ : cyclonev_io_obuf
@@ -10232,7 +10264,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(19));
+	o => ww_GPIO_1_io(19));
 
 -- Location: IOOBUF_X74_Y0_N93
 \GPIO_1_io[20]~output\ : cyclonev_io_obuf
@@ -10245,7 +10277,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(20));
+	o => ww_GPIO_1_io(20));
 
 -- Location: IOOBUF_X74_Y0_N76
 \GPIO_1_io[21]~output\ : cyclonev_io_obuf
@@ -10258,7 +10290,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(21));
+	o => ww_GPIO_1_io(21));
 
 -- Location: IOOBUF_X72_Y0_N53
 \GPIO_1_io[22]~output\ : cyclonev_io_obuf
@@ -10271,7 +10303,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(22));
+	o => ww_GPIO_1_io(22));
 
 -- Location: IOOBUF_X64_Y0_N36
 \GPIO_1_io[23]~output\ : cyclonev_io_obuf
@@ -10284,7 +10316,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(23));
+	o => ww_GPIO_1_io(23));
 
 -- Location: IOOBUF_X72_Y0_N36
 \GPIO_1_io[24]~output\ : cyclonev_io_obuf
@@ -10297,7 +10329,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(24));
+	o => ww_GPIO_1_io(24));
 
 -- Location: IOOBUF_X70_Y0_N36
 \GPIO_1_io[25]~output\ : cyclonev_io_obuf
@@ -10310,7 +10342,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(25));
+	o => ww_GPIO_1_io(25));
 
 -- Location: IOOBUF_X68_Y0_N53
 \GPIO_1_io[26]~output\ : cyclonev_io_obuf
@@ -10323,7 +10355,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(26));
+	o => ww_GPIO_1_io(26));
 
 -- Location: IOOBUF_X70_Y0_N53
 \GPIO_1_io[27]~output\ : cyclonev_io_obuf
@@ -10336,7 +10368,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(27));
+	o => ww_GPIO_1_io(27));
 
 -- Location: IOOBUF_X66_Y0_N93
 \GPIO_1_io[28]~output\ : cyclonev_io_obuf
@@ -10349,7 +10381,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(28));
+	o => ww_GPIO_1_io(28));
 
 -- Location: IOOBUF_X66_Y0_N76
 \GPIO_1_io[29]~output\ : cyclonev_io_obuf
@@ -10362,7 +10394,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(29));
+	o => ww_GPIO_1_io(29));
 
 -- Location: IOOBUF_X74_Y0_N59
 \GPIO_1_io[30]~output\ : cyclonev_io_obuf
@@ -10375,7 +10407,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(30));
+	o => ww_GPIO_1_io(30));
 
 -- Location: IOOBUF_X74_Y0_N42
 \GPIO_1_io[31]~output\ : cyclonev_io_obuf
@@ -10388,7 +10420,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(31));
+	o => ww_GPIO_1_io(31));
 
 -- Location: IOOBUF_X78_Y0_N2
 \GPIO_1_io[32]~output\ : cyclonev_io_obuf
@@ -10401,7 +10433,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(32));
+	o => ww_GPIO_1_io(32));
 
 -- Location: IOOBUF_X82_Y0_N59
 \GPIO_1_io[33]~output\ : cyclonev_io_obuf
@@ -10414,7 +10446,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(33));
+	o => ww_GPIO_1_io(33));
 
 -- Location: IOOBUF_X84_Y0_N19
 \GPIO_1_io[34]~output\ : cyclonev_io_obuf
@@ -10427,7 +10459,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(34));
+	o => ww_GPIO_1_io(34));
 
 -- Location: IOOBUF_X86_Y0_N2
 \GPIO_1_io[35]~output\ : cyclonev_io_obuf
@@ -10440,7 +10472,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => GPIO_1_io(35));
+	o => ww_GPIO_1_io(35));
 
 -- Location: IOOBUF_X6_Y0_N2
 \PS2_CLK_io~output\ : cyclonev_io_obuf
@@ -10453,7 +10485,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => PS2_CLK_io);
+	o => ww_PS2_CLK_io);
 
 -- Location: IOOBUF_X6_Y0_N19
 \PS2_DAT_io~output\ : cyclonev_io_obuf
@@ -10466,7 +10498,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => PS2_DAT_io);
+	o => ww_PS2_DAT_io);
 
 -- Location: IOOBUF_X2_Y0_N76
 \PS2_CLK2_io~output\ : cyclonev_io_obuf
@@ -10479,7 +10511,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => PS2_CLK2_io);
+	o => ww_PS2_CLK2_io);
 
 -- Location: IOOBUF_X2_Y0_N93
 \PS2_DAT2_io~output\ : cyclonev_io_obuf
@@ -10492,7 +10524,7 @@ GENERIC MAP (
 PORT MAP (
 	i => VCC,
 	devoe => ww_devoe,
-	o => PS2_DAT2_io);
+	o => ww_PS2_DAT2_io);
 
 -- Location: IOOBUF_X89_Y66_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out\ : cyclonev_io_obuf
@@ -10509,7 +10541,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(0));
+	o => ww_HPS_DDR3_DQ_io(0));
 
 -- Location: IOOBUF_X89_Y66_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out\ : cyclonev_io_obuf
@@ -10526,7 +10558,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(1));
+	o => ww_HPS_DDR3_DQ_io(1));
 
 -- Location: IOOBUF_X89_Y66_N39
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out\ : cyclonev_io_obuf
@@ -10543,7 +10575,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(2));
+	o => ww_HPS_DDR3_DQ_io(2));
 
 -- Location: IOOBUF_X89_Y65_N56
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out\ : cyclonev_io_obuf
@@ -10560,7 +10592,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(3));
+	o => ww_HPS_DDR3_DQ_io(3));
 
 -- Location: IOOBUF_X89_Y64_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out\ : cyclonev_io_obuf
@@ -10577,7 +10609,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(4));
+	o => ww_HPS_DDR3_DQ_io(4));
 
 -- Location: IOOBUF_X89_Y64_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out\ : cyclonev_io_obuf
@@ -10594,7 +10626,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(5));
+	o => ww_HPS_DDR3_DQ_io(5));
 
 -- Location: IOOBUF_X89_Y64_N39
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out\ : cyclonev_io_obuf
@@ -10611,7 +10643,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(6));
+	o => ww_HPS_DDR3_DQ_io(6));
 
 -- Location: IOOBUF_X89_Y63_N96
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out\ : cyclonev_io_obuf
@@ -10628,7 +10660,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(7));
+	o => ww_HPS_DDR3_DQ_io(7));
 
 -- Location: IOOBUF_X89_Y59_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out\ : cyclonev_io_obuf
@@ -10645,7 +10677,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(8));
+	o => ww_HPS_DDR3_DQ_io(8));
 
 -- Location: IOOBUF_X89_Y59_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out\ : cyclonev_io_obuf
@@ -10662,7 +10694,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(9));
+	o => ww_HPS_DDR3_DQ_io(9));
 
 -- Location: IOOBUF_X89_Y59_N39
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out\ : cyclonev_io_obuf
@@ -10679,7 +10711,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(10));
+	o => ww_HPS_DDR3_DQ_io(10));
 
 -- Location: IOOBUF_X89_Y58_N56
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out\ : cyclonev_io_obuf
@@ -10696,7 +10728,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(11));
+	o => ww_HPS_DDR3_DQ_io(11));
 
 -- Location: IOOBUF_X89_Y57_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out\ : cyclonev_io_obuf
@@ -10713,7 +10745,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(12));
+	o => ww_HPS_DDR3_DQ_io(12));
 
 -- Location: IOOBUF_X89_Y57_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out\ : cyclonev_io_obuf
@@ -10730,7 +10762,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(13));
+	o => ww_HPS_DDR3_DQ_io(13));
 
 -- Location: IOOBUF_X89_Y57_N39
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out\ : cyclonev_io_obuf
@@ -10747,7 +10779,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(14));
+	o => ww_HPS_DDR3_DQ_io(14));
 
 -- Location: IOOBUF_X89_Y56_N96
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out\ : cyclonev_io_obuf
@@ -10764,7 +10796,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(15));
+	o => ww_HPS_DDR3_DQ_io(15));
 
 -- Location: IOOBUF_X89_Y52_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out\ : cyclonev_io_obuf
@@ -10781,7 +10813,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(16));
+	o => ww_HPS_DDR3_DQ_io(16));
 
 -- Location: IOOBUF_X89_Y52_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out\ : cyclonev_io_obuf
@@ -10798,7 +10830,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(17));
+	o => ww_HPS_DDR3_DQ_io(17));
 
 -- Location: IOOBUF_X89_Y52_N39
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out\ : cyclonev_io_obuf
@@ -10815,7 +10847,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(18));
+	o => ww_HPS_DDR3_DQ_io(18));
 
 -- Location: IOOBUF_X89_Y51_N56
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out\ : cyclonev_io_obuf
@@ -10832,7 +10864,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(19));
+	o => ww_HPS_DDR3_DQ_io(19));
 
 -- Location: IOOBUF_X89_Y50_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out\ : cyclonev_io_obuf
@@ -10849,7 +10881,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(20));
+	o => ww_HPS_DDR3_DQ_io(20));
 
 -- Location: IOOBUF_X89_Y50_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out\ : cyclonev_io_obuf
@@ -10866,7 +10898,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(21));
+	o => ww_HPS_DDR3_DQ_io(21));
 
 -- Location: IOOBUF_X89_Y50_N39
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out\ : cyclonev_io_obuf
@@ -10883,7 +10915,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(22));
+	o => ww_HPS_DDR3_DQ_io(22));
 
 -- Location: IOOBUF_X89_Y49_N96
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out\ : cyclonev_io_obuf
@@ -10900,7 +10932,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(23));
+	o => ww_HPS_DDR3_DQ_io(23));
 
 -- Location: IOOBUF_X89_Y45_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out\ : cyclonev_io_obuf
@@ -10917,7 +10949,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(24));
+	o => ww_HPS_DDR3_DQ_io(24));
 
 -- Location: IOOBUF_X89_Y45_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out\ : cyclonev_io_obuf
@@ -10934,7 +10966,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(25));
+	o => ww_HPS_DDR3_DQ_io(25));
 
 -- Location: IOOBUF_X89_Y45_N39
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out\ : cyclonev_io_obuf
@@ -10951,7 +10983,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(26));
+	o => ww_HPS_DDR3_DQ_io(26));
 
 -- Location: IOOBUF_X89_Y44_N56
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out\ : cyclonev_io_obuf
@@ -10968,7 +11000,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(27));
+	o => ww_HPS_DDR3_DQ_io(27));
 
 -- Location: IOOBUF_X89_Y43_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out\ : cyclonev_io_obuf
@@ -10985,7 +11017,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(28));
+	o => ww_HPS_DDR3_DQ_io(28));
 
 -- Location: IOOBUF_X89_Y43_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out\ : cyclonev_io_obuf
@@ -11002,7 +11034,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(29));
+	o => ww_HPS_DDR3_DQ_io(29));
 
 -- Location: IOOBUF_X89_Y43_N39
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out\ : cyclonev_io_obuf
@@ -11019,7 +11051,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(30));
+	o => ww_HPS_DDR3_DQ_io(30));
 
 -- Location: IOOBUF_X89_Y42_N96
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out\ : cyclonev_io_obuf
@@ -11036,7 +11068,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].data_out_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQ_io(31));
+	o => ww_HPS_DDR3_DQ_io(31));
 
 -- Location: IOOBUF_X89_Y65_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0\ : cyclonev_io_obuf
@@ -11053,7 +11085,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQS_N_io(0));
+	o => ww_HPS_DDR3_DQS_N_io(0));
 
 -- Location: IOOBUF_X89_Y58_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0\ : cyclonev_io_obuf
@@ -11070,7 +11102,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQS_N_io(1));
+	o => ww_HPS_DDR3_DQS_N_io(1));
 
 -- Location: IOOBUF_X89_Y51_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0\ : cyclonev_io_obuf
@@ -11087,7 +11119,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQS_N_io(2));
+	o => ww_HPS_DDR3_DQS_N_io(2));
 
 -- Location: IOOBUF_X89_Y44_N22
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0\ : cyclonev_io_obuf
@@ -11104,7 +11136,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_bar_0_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQS_N_io(3));
+	o => ww_HPS_DDR3_DQS_N_io(3));
 
 -- Location: IOOBUF_X89_Y65_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0\ : cyclonev_io_obuf
@@ -11121,7 +11153,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQS_P_io(0));
+	o => ww_HPS_DDR3_DQS_P_io(0));
 
 -- Location: IOOBUF_X89_Y58_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0\ : cyclonev_io_obuf
@@ -11138,7 +11170,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQS_P_io(1));
+	o => ww_HPS_DDR3_DQS_P_io(1));
 
 -- Location: IOOBUF_X89_Y51_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0\ : cyclonev_io_obuf
@@ -11155,7 +11187,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQS_P_io(2));
+	o => ww_HPS_DDR3_DQS_P_io(2));
 
 -- Location: IOOBUF_X89_Y44_N5
 \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0\ : cyclonev_io_obuf
@@ -11172,7 +11204,7 @@ PORT MAP (
 	seriesterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0_SERIESTERMINATIONCONTROL_bus\,
 	parallelterminationcontrol => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|obuf_os_0_PARALLELTERMINATIONCONTROL_bus\,
 	devoe => ww_devoe,
-	o => HPS_DDR3_DQS_P_io(3));
+	o => ww_HPS_DDR3_DQS_P_io(3));
 
 -- Location: IOOBUF_X78_Y81_N6
 \System|hps_0|hps_io|border|hps_io_gpio_inst_GPIO54[0]~output\ : cyclonev_io_obuf
@@ -11186,7 +11218,7 @@ PORT MAP (
 	i => \System|hps_0|hps_io|border|intermediate\(2),
 	oe => \System|hps_0|hps_io|border|intermediate\(3),
 	devoe => ww_devoe,
-	o => HPS_KEY_io);
+	o => ww_HPS_KEY_io);
 
 -- Location: IOOBUF_X78_Y81_N9
 \System|hps_0|hps_io|border|hps_io_gpio_inst_GPIO53[0]~output\ : cyclonev_io_obuf
@@ -11200,7 +11232,7 @@ PORT MAP (
 	i => \System|hps_0|hps_io|border|intermediate\(0),
 	oe => \System|hps_0|hps_io|border|intermediate\(1),
 	devoe => ww_devoe,
-	o => HPS_LED_io);
+	o => ww_HPS_LED_io);
 
 -- Location: HPSSDRAMPLL_X84_Y41_N111
 \System|hps_0|hps_io|border|hps_sdram_inst|pll|pll\ : cyclonev_hps_sdram_pll
@@ -11753,8 +11785,8 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQS_P_io(0),
-	ibar => HPS_DDR3_DQS_N_io(0),
+	i => ww_HPS_DDR3_DQS_P_io(0),
+	ibar => ww_HPS_DDR3_DQS_N_io(0),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|dqsin\);
 
 -- Location: IOIBUF_X89_Y66_N21
@@ -11765,7 +11797,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(0),
+	i => ww_HPS_DDR3_DQ_io(0),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y66_N33
@@ -11855,7 +11887,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(1),
+	i => ww_HPS_DDR3_DQ_io(1),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y66_N16
@@ -11945,7 +11977,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(2),
+	i => ww_HPS_DDR3_DQ_io(2),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y66_N50
@@ -12035,7 +12067,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(3),
+	i => ww_HPS_DDR3_DQ_io(3),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y65_N67
@@ -12125,7 +12157,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(4),
+	i => ww_HPS_DDR3_DQ_io(4),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y64_N33
@@ -12215,7 +12247,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(5),
+	i => ww_HPS_DDR3_DQ_io(5),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y64_N16
@@ -12305,7 +12337,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(6),
+	i => ww_HPS_DDR3_DQ_io(6),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y64_N50
@@ -12395,7 +12427,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(7),
+	i => ww_HPS_DDR3_DQ_io(7),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y63_N107
@@ -12514,8 +12546,8 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQS_P_io(1),
-	ibar => HPS_DDR3_DQS_N_io(1),
+	i => ww_HPS_DDR3_DQS_P_io(1),
+	ibar => ww_HPS_DDR3_DQS_N_io(1),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|dqsin\);
 
 -- Location: IOIBUF_X89_Y59_N21
@@ -12526,7 +12558,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(8),
+	i => ww_HPS_DDR3_DQ_io(8),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y59_N33
@@ -12616,7 +12648,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(9),
+	i => ww_HPS_DDR3_DQ_io(9),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y59_N16
@@ -12706,7 +12738,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(10),
+	i => ww_HPS_DDR3_DQ_io(10),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y59_N50
@@ -12796,7 +12828,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(11),
+	i => ww_HPS_DDR3_DQ_io(11),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y58_N67
@@ -12886,7 +12918,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(12),
+	i => ww_HPS_DDR3_DQ_io(12),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y57_N33
@@ -12976,7 +13008,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(13),
+	i => ww_HPS_DDR3_DQ_io(13),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y57_N16
@@ -13066,7 +13098,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(14),
+	i => ww_HPS_DDR3_DQ_io(14),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y57_N50
@@ -13156,7 +13188,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(15),
+	i => ww_HPS_DDR3_DQ_io(15),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y56_N107
@@ -13300,8 +13332,8 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQS_P_io(2),
-	ibar => HPS_DDR3_DQS_N_io(2),
+	i => ww_HPS_DDR3_DQS_P_io(2),
+	ibar => ww_HPS_DDR3_DQS_N_io(2),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|dqsin\);
 
 -- Location: IOIBUF_X89_Y52_N21
@@ -13312,7 +13344,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(16),
+	i => ww_HPS_DDR3_DQ_io(16),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y52_N33
@@ -13402,7 +13434,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(17),
+	i => ww_HPS_DDR3_DQ_io(17),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y52_N16
@@ -13492,7 +13524,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(18),
+	i => ww_HPS_DDR3_DQ_io(18),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y52_N50
@@ -13582,7 +13614,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(19),
+	i => ww_HPS_DDR3_DQ_io(19),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y51_N67
@@ -13672,7 +13704,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(20),
+	i => ww_HPS_DDR3_DQ_io(20),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y50_N33
@@ -13762,7 +13794,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(21),
+	i => ww_HPS_DDR3_DQ_io(21),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y50_N16
@@ -13852,7 +13884,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(22),
+	i => ww_HPS_DDR3_DQ_io(22),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y50_N50
@@ -13942,7 +13974,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(23),
+	i => ww_HPS_DDR3_DQ_io(23),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y49_N107
@@ -14061,8 +14093,8 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQS_P_io(3),
-	ibar => HPS_DDR3_DQS_N_io(3),
+	i => ww_HPS_DDR3_DQS_P_io(3),
+	ibar => ww_HPS_DDR3_DQS_N_io(3),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|dqsin\);
 
 -- Location: IOIBUF_X89_Y45_N21
@@ -14073,7 +14105,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(24),
+	i => ww_HPS_DDR3_DQ_io(24),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[0].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y45_N33
@@ -14163,7 +14195,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(25),
+	i => ww_HPS_DDR3_DQ_io(25),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[1].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y45_N16
@@ -14253,7 +14285,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(26),
+	i => ww_HPS_DDR3_DQ_io(26),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[2].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y45_N50
@@ -14343,7 +14375,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(27),
+	i => ww_HPS_DDR3_DQ_io(27),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[3].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y44_N67
@@ -14433,7 +14465,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(28),
+	i => ww_HPS_DDR3_DQ_io(28),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[4].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y43_N33
@@ -14523,7 +14555,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(29),
+	i => ww_HPS_DDR3_DQ_io(29),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[5].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y43_N16
@@ -14613,7 +14645,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(30),
+	i => ww_HPS_DDR3_DQ_io(30),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[6].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y43_N50
@@ -14703,7 +14735,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_DDR3_DQ_io(31),
+	i => ww_HPS_DDR3_DQ_io(31),
 	o => \System|hps_0|hps_io|border|hps_sdram_inst|p0|umemphy|uio_pads|dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_inst|pad_gen[7].raw_input\);
 
 -- Location: DELAYCHAIN_X89_Y42_N107
@@ -21306,7 +21338,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_LED_io,
+	i => ww_HPS_LED_io,
 	o => \System|hps_0|hps_io|border|hps_io_gpio_inst_GPIO53[0]~input_o\);
 
 -- Location: IOIBUF_X78_Y81_N5
@@ -21317,7 +21349,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => HPS_KEY_io,
+	i => ww_HPS_KEY_io,
 	o => \System|hps_0|hps_io|border|hps_io_gpio_inst_GPIO54[0]~input_o\);
 
 -- Location: HPSPERIPHERALGPIO_X87_Y74_N111
@@ -23387,7 +23419,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => AUD_ADCLRCK_io,
+	i => ww_AUD_ADCLRCK_io,
 	o => \AUD_ADCLRCK_io~input_o\);
 
 -- Location: IOIBUF_X24_Y81_N1
@@ -23398,7 +23430,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => AUD_DACLRCK_io,
+	i => ww_AUD_DACLRCK_io,
 	o => \AUD_DACLRCK_io~input_o\);
 
 -- Location: IOIBUF_X16_Y81_N18
@@ -23409,7 +23441,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => AUD_BCLK_io,
+	i => ww_AUD_BCLK_io,
 	o => \AUD_BCLK_io~input_o\);
 
 -- Location: IOIBUF_X24_Y0_N52
@@ -23420,7 +23452,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(0),
+	i => ww_DRAM_DQ_io(0),
 	o => \DRAM_DQ_io[0]~input_o\);
 
 -- Location: IOIBUF_X26_Y0_N92
@@ -23431,7 +23463,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(1),
+	i => ww_DRAM_DQ_io(1),
 	o => \DRAM_DQ_io[1]~input_o\);
 
 -- Location: IOIBUF_X28_Y0_N35
@@ -23442,7 +23474,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(2),
+	i => ww_DRAM_DQ_io(2),
 	o => \DRAM_DQ_io[2]~input_o\);
 
 -- Location: IOIBUF_X28_Y0_N52
@@ -23453,7 +23485,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(3),
+	i => ww_DRAM_DQ_io(3),
 	o => \DRAM_DQ_io[3]~input_o\);
 
 -- Location: IOIBUF_X30_Y0_N52
@@ -23464,7 +23496,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(4),
+	i => ww_DRAM_DQ_io(4),
 	o => \DRAM_DQ_io[4]~input_o\);
 
 -- Location: IOIBUF_X18_Y0_N75
@@ -23475,7 +23507,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(5),
+	i => ww_DRAM_DQ_io(5),
 	o => \DRAM_DQ_io[5]~input_o\);
 
 -- Location: IOIBUF_X34_Y0_N58
@@ -23486,7 +23518,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(6),
+	i => ww_DRAM_DQ_io(6),
 	o => \DRAM_DQ_io[6]~input_o\);
 
 -- Location: IOIBUF_X34_Y0_N41
@@ -23497,7 +23529,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(7),
+	i => ww_DRAM_DQ_io(7),
 	o => \DRAM_DQ_io[7]~input_o\);
 
 -- Location: IOIBUF_X34_Y0_N75
@@ -23508,7 +23540,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(8),
+	i => ww_DRAM_DQ_io(8),
 	o => \DRAM_DQ_io[8]~input_o\);
 
 -- Location: IOIBUF_X34_Y0_N92
@@ -23519,7 +23551,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(9),
+	i => ww_DRAM_DQ_io(9),
 	o => \DRAM_DQ_io[9]~input_o\);
 
 -- Location: IOIBUF_X30_Y0_N35
@@ -23530,7 +23562,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(10),
+	i => ww_DRAM_DQ_io(10),
 	o => \DRAM_DQ_io[10]~input_o\);
 
 -- Location: IOIBUF_X18_Y0_N92
@@ -23541,7 +23573,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(11),
+	i => ww_DRAM_DQ_io(11),
 	o => \DRAM_DQ_io[11]~input_o\);
 
 -- Location: IOIBUF_X32_Y0_N52
@@ -23552,7 +23584,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(12),
+	i => ww_DRAM_DQ_io(12),
 	o => \DRAM_DQ_io[12]~input_o\);
 
 -- Location: IOIBUF_X32_Y0_N35
@@ -23563,7 +23595,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(13),
+	i => ww_DRAM_DQ_io(13),
 	o => \DRAM_DQ_io[13]~input_o\);
 
 -- Location: IOIBUF_X26_Y0_N75
@@ -23574,7 +23606,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(14),
+	i => ww_DRAM_DQ_io(14),
 	o => \DRAM_DQ_io[14]~input_o\);
 
 -- Location: IOIBUF_X24_Y0_N35
@@ -23585,7 +23617,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => DRAM_DQ_io(15),
+	i => ww_DRAM_DQ_io(15),
 	o => \DRAM_DQ_io[15]~input_o\);
 
 -- Location: IOIBUF_X12_Y81_N1
@@ -23596,7 +23628,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => FPGA_I2C_SDAT_io,
+	i => ww_FPGA_I2C_SDAT_io,
 	o => \FPGA_I2C_SDAT_io~input_o\);
 
 -- Location: IOIBUF_X64_Y0_N1
@@ -23607,7 +23639,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(0),
+	i => ww_GPIO_0_io(0),
 	o => \GPIO_0_io[0]~input_o\);
 
 -- Location: IOIBUF_X68_Y0_N1
@@ -23618,7 +23650,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(1),
+	i => ww_GPIO_0_io(1),
 	o => \GPIO_0_io[1]~input_o\);
 
 -- Location: IOIBUF_X64_Y0_N18
@@ -23629,7 +23661,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(2),
+	i => ww_GPIO_0_io(2),
 	o => \GPIO_0_io[2]~input_o\);
 
 -- Location: IOIBUF_X72_Y0_N1
@@ -23640,7 +23672,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(3),
+	i => ww_GPIO_0_io(3),
 	o => \GPIO_0_io[3]~input_o\);
 
 -- Location: IOIBUF_X54_Y0_N52
@@ -23651,7 +23683,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(4),
+	i => ww_GPIO_0_io(4),
 	o => \GPIO_0_io[4]~input_o\);
 
 -- Location: IOIBUF_X58_Y0_N58
@@ -23662,7 +23694,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(5),
+	i => ww_GPIO_0_io(5),
 	o => \GPIO_0_io[5]~input_o\);
 
 -- Location: IOIBUF_X60_Y0_N52
@@ -23673,7 +23705,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(6),
+	i => ww_GPIO_0_io(6),
 	o => \GPIO_0_io[6]~input_o\);
 
 -- Location: IOIBUF_X60_Y0_N35
@@ -23684,7 +23716,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(7),
+	i => ww_GPIO_0_io(7),
 	o => \GPIO_0_io[7]~input_o\);
 
 -- Location: IOIBUF_X58_Y0_N41
@@ -23695,7 +23727,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(8),
+	i => ww_GPIO_0_io(8),
 	o => \GPIO_0_io[8]~input_o\);
 
 -- Location: IOIBUF_X54_Y0_N35
@@ -23706,7 +23738,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(9),
+	i => ww_GPIO_0_io(9),
 	o => \GPIO_0_io[9]~input_o\);
 
 -- Location: IOIBUF_X56_Y0_N52
@@ -23717,7 +23749,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(10),
+	i => ww_GPIO_0_io(10),
 	o => \GPIO_0_io[10]~input_o\);
 
 -- Location: IOIBUF_X56_Y0_N35
@@ -23728,7 +23760,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(11),
+	i => ww_GPIO_0_io(11),
 	o => \GPIO_0_io[11]~input_o\);
 
 -- Location: IOIBUF_X50_Y0_N75
@@ -23739,7 +23771,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(12),
+	i => ww_GPIO_0_io(12),
 	o => \GPIO_0_io[12]~input_o\);
 
 -- Location: IOIBUF_X52_Y0_N35
@@ -23750,7 +23782,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(13),
+	i => ww_GPIO_0_io(13),
 	o => \GPIO_0_io[13]~input_o\);
 
 -- Location: IOIBUF_X52_Y0_N52
@@ -23761,7 +23793,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(14),
+	i => ww_GPIO_0_io(14),
 	o => \GPIO_0_io[14]~input_o\);
 
 -- Location: IOIBUF_X50_Y0_N92
@@ -23772,7 +23804,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(15),
+	i => ww_GPIO_0_io(15),
 	o => \GPIO_0_io[15]~input_o\);
 
 -- Location: IOIBUF_X68_Y0_N18
@@ -23783,7 +23815,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(16),
+	i => ww_GPIO_0_io(16),
 	o => \GPIO_0_io[16]~input_o\);
 
 -- Location: IOIBUF_X72_Y0_N18
@@ -23794,7 +23826,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(17),
+	i => ww_GPIO_0_io(17),
 	o => \GPIO_0_io[17]~input_o\);
 
 -- Location: IOIBUF_X50_Y0_N41
@@ -23805,7 +23837,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(18),
+	i => ww_GPIO_0_io(18),
 	o => \GPIO_0_io[18]~input_o\);
 
 -- Location: IOIBUF_X76_Y0_N1
@@ -23816,7 +23848,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(19),
+	i => ww_GPIO_0_io(19),
 	o => \GPIO_0_io[19]~input_o\);
 
 -- Location: IOIBUF_X58_Y0_N92
@@ -23827,7 +23859,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(20),
+	i => ww_GPIO_0_io(20),
 	o => \GPIO_0_io[20]~input_o\);
 
 -- Location: IOIBUF_X62_Y0_N35
@@ -23838,7 +23870,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(21),
+	i => ww_GPIO_0_io(21),
 	o => \GPIO_0_io[21]~input_o\);
 
 -- Location: IOIBUF_X54_Y0_N18
@@ -23849,7 +23881,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(22),
+	i => ww_GPIO_0_io(22),
 	o => \GPIO_0_io[22]~input_o\);
 
 -- Location: IOIBUF_X68_Y0_N35
@@ -23860,7 +23892,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(23),
+	i => ww_GPIO_0_io(23),
 	o => \GPIO_0_io[23]~input_o\);
 
 -- Location: IOIBUF_X76_Y0_N18
@@ -23871,7 +23903,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(24),
+	i => ww_GPIO_0_io(24),
 	o => \GPIO_0_io[24]~input_o\);
 
 -- Location: IOIBUF_X82_Y0_N41
@@ -23882,7 +23914,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(25),
+	i => ww_GPIO_0_io(25),
 	o => \GPIO_0_io[25]~input_o\);
 
 -- Location: IOIBUF_X66_Y0_N41
@@ -23893,7 +23925,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(26),
+	i => ww_GPIO_0_io(26),
 	o => \GPIO_0_io[26]~input_o\);
 
 -- Location: IOIBUF_X66_Y0_N58
@@ -23904,7 +23936,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(27),
+	i => ww_GPIO_0_io(27),
 	o => \GPIO_0_io[27]~input_o\);
 
 -- Location: IOIBUF_X70_Y0_N1
@@ -23915,7 +23947,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(28),
+	i => ww_GPIO_0_io(28),
 	o => \GPIO_0_io[28]~input_o\);
 
 -- Location: IOIBUF_X70_Y0_N18
@@ -23926,7 +23958,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(29),
+	i => ww_GPIO_0_io(29),
 	o => \GPIO_0_io[29]~input_o\);
 
 -- Location: IOIBUF_X62_Y0_N1
@@ -23937,7 +23969,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(30),
+	i => ww_GPIO_0_io(30),
 	o => \GPIO_0_io[30]~input_o\);
 
 -- Location: IOIBUF_X54_Y0_N1
@@ -23948,7 +23980,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(31),
+	i => ww_GPIO_0_io(31),
 	o => \GPIO_0_io[31]~input_o\);
 
 -- Location: IOIBUF_X50_Y0_N58
@@ -23959,7 +23991,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(32),
+	i => ww_GPIO_0_io(32),
 	o => \GPIO_0_io[32]~input_o\);
 
 -- Location: IOIBUF_X62_Y0_N18
@@ -23970,7 +24002,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(33),
+	i => ww_GPIO_0_io(33),
 	o => \GPIO_0_io[33]~input_o\);
 
 -- Location: IOIBUF_X58_Y0_N75
@@ -23981,7 +24013,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(34),
+	i => ww_GPIO_0_io(34),
 	o => \GPIO_0_io[34]~input_o\);
 
 -- Location: IOIBUF_X62_Y0_N52
@@ -23992,7 +24024,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_0_io(35),
+	i => ww_GPIO_0_io(35),
 	o => \GPIO_0_io[35]~input_o\);
 
 -- Location: IOIBUF_X56_Y0_N18
@@ -24003,7 +24035,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(0),
+	i => ww_GPIO_1_io(0),
 	o => \GPIO_1_io[0]~input_o\);
 
 -- Location: IOIBUF_X88_Y0_N2
@@ -24014,7 +24046,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(1),
+	i => ww_GPIO_1_io(1),
 	o => \GPIO_1_io[1]~input_o\);
 
 -- Location: IOIBUF_X88_Y0_N19
@@ -24025,7 +24057,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(2),
+	i => ww_GPIO_1_io(2),
 	o => \GPIO_1_io[2]~input_o\);
 
 -- Location: IOIBUF_X86_Y0_N18
@@ -24036,7 +24068,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(3),
+	i => ww_GPIO_1_io(3),
 	o => \GPIO_1_io[3]~input_o\);
 
 -- Location: IOIBUF_X88_Y0_N36
@@ -24047,7 +24079,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(4),
+	i => ww_GPIO_1_io(4),
 	o => \GPIO_1_io[4]~input_o\);
 
 -- Location: IOIBUF_X78_Y0_N18
@@ -24058,7 +24090,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(5),
+	i => ww_GPIO_1_io(5),
 	o => \GPIO_1_io[5]~input_o\);
 
 -- Location: IOIBUF_X88_Y0_N53
@@ -24069,7 +24101,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(6),
+	i => ww_GPIO_1_io(6),
 	o => \GPIO_1_io[6]~input_o\);
 
 -- Location: IOIBUF_X86_Y0_N35
@@ -24080,7 +24112,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(7),
+	i => ww_GPIO_1_io(7),
 	o => \GPIO_1_io[7]~input_o\);
 
 -- Location: IOIBUF_X86_Y0_N52
@@ -24091,7 +24123,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(8),
+	i => ww_GPIO_1_io(8),
 	o => \GPIO_1_io[8]~input_o\);
 
 -- Location: IOIBUF_X78_Y0_N35
@@ -24102,7 +24134,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(9),
+	i => ww_GPIO_1_io(9),
 	o => \GPIO_1_io[9]~input_o\);
 
 -- Location: IOIBUF_X84_Y0_N35
@@ -24113,7 +24145,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(10),
+	i => ww_GPIO_1_io(10),
 	o => \GPIO_1_io[10]~input_o\);
 
 -- Location: IOIBUF_X64_Y0_N52
@@ -24124,7 +24156,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(11),
+	i => ww_GPIO_1_io(11),
 	o => \GPIO_1_io[11]~input_o\);
 
 -- Location: IOIBUF_X84_Y0_N52
@@ -24135,7 +24167,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(12),
+	i => ww_GPIO_1_io(12),
 	o => \GPIO_1_io[12]~input_o\);
 
 -- Location: IOIBUF_X80_Y0_N35
@@ -24146,7 +24178,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(13),
+	i => ww_GPIO_1_io(13),
 	o => \GPIO_1_io[13]~input_o\);
 
 -- Location: IOIBUF_X82_Y0_N92
@@ -24157,7 +24189,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(14),
+	i => ww_GPIO_1_io(14),
 	o => \GPIO_1_io[14]~input_o\);
 
 -- Location: IOIBUF_X82_Y0_N75
@@ -24168,7 +24200,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(15),
+	i => ww_GPIO_1_io(15),
 	o => \GPIO_1_io[15]~input_o\);
 
 -- Location: IOIBUF_X80_Y0_N52
@@ -24179,7 +24211,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(16),
+	i => ww_GPIO_1_io(16),
 	o => \GPIO_1_io[16]~input_o\);
 
 -- Location: IOIBUF_X76_Y0_N35
@@ -24190,7 +24222,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(17),
+	i => ww_GPIO_1_io(17),
 	o => \GPIO_1_io[17]~input_o\);
 
 -- Location: IOIBUF_X76_Y0_N52
@@ -24201,7 +24233,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(18),
+	i => ww_GPIO_1_io(18),
 	o => \GPIO_1_io[18]~input_o\);
 
 -- Location: IOIBUF_X78_Y0_N52
@@ -24212,7 +24244,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(19),
+	i => ww_GPIO_1_io(19),
 	o => \GPIO_1_io[19]~input_o\);
 
 -- Location: IOIBUF_X74_Y0_N92
@@ -24223,7 +24255,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(20),
+	i => ww_GPIO_1_io(20),
 	o => \GPIO_1_io[20]~input_o\);
 
 -- Location: IOIBUF_X74_Y0_N75
@@ -24234,7 +24266,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(21),
+	i => ww_GPIO_1_io(21),
 	o => \GPIO_1_io[21]~input_o\);
 
 -- Location: IOIBUF_X72_Y0_N52
@@ -24245,7 +24277,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(22),
+	i => ww_GPIO_1_io(22),
 	o => \GPIO_1_io[22]~input_o\);
 
 -- Location: IOIBUF_X64_Y0_N35
@@ -24256,7 +24288,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(23),
+	i => ww_GPIO_1_io(23),
 	o => \GPIO_1_io[23]~input_o\);
 
 -- Location: IOIBUF_X72_Y0_N35
@@ -24267,7 +24299,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(24),
+	i => ww_GPIO_1_io(24),
 	o => \GPIO_1_io[24]~input_o\);
 
 -- Location: IOIBUF_X70_Y0_N35
@@ -24278,7 +24310,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(25),
+	i => ww_GPIO_1_io(25),
 	o => \GPIO_1_io[25]~input_o\);
 
 -- Location: IOIBUF_X68_Y0_N52
@@ -24289,7 +24321,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(26),
+	i => ww_GPIO_1_io(26),
 	o => \GPIO_1_io[26]~input_o\);
 
 -- Location: IOIBUF_X70_Y0_N52
@@ -24300,7 +24332,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(27),
+	i => ww_GPIO_1_io(27),
 	o => \GPIO_1_io[27]~input_o\);
 
 -- Location: IOIBUF_X66_Y0_N92
@@ -24311,7 +24343,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(28),
+	i => ww_GPIO_1_io(28),
 	o => \GPIO_1_io[28]~input_o\);
 
 -- Location: IOIBUF_X66_Y0_N75
@@ -24322,7 +24354,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(29),
+	i => ww_GPIO_1_io(29),
 	o => \GPIO_1_io[29]~input_o\);
 
 -- Location: IOIBUF_X74_Y0_N58
@@ -24333,7 +24365,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(30),
+	i => ww_GPIO_1_io(30),
 	o => \GPIO_1_io[30]~input_o\);
 
 -- Location: IOIBUF_X74_Y0_N41
@@ -24344,7 +24376,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(31),
+	i => ww_GPIO_1_io(31),
 	o => \GPIO_1_io[31]~input_o\);
 
 -- Location: IOIBUF_X78_Y0_N1
@@ -24355,7 +24387,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(32),
+	i => ww_GPIO_1_io(32),
 	o => \GPIO_1_io[32]~input_o\);
 
 -- Location: IOIBUF_X82_Y0_N58
@@ -24366,7 +24398,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(33),
+	i => ww_GPIO_1_io(33),
 	o => \GPIO_1_io[33]~input_o\);
 
 -- Location: IOIBUF_X84_Y0_N18
@@ -24377,7 +24409,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(34),
+	i => ww_GPIO_1_io(34),
 	o => \GPIO_1_io[34]~input_o\);
 
 -- Location: IOIBUF_X86_Y0_N1
@@ -24388,7 +24420,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => GPIO_1_io(35),
+	i => ww_GPIO_1_io(35),
 	o => \GPIO_1_io[35]~input_o\);
 
 -- Location: IOIBUF_X6_Y0_N1
@@ -24399,7 +24431,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => PS2_CLK_io,
+	i => ww_PS2_CLK_io,
 	o => \PS2_CLK_io~input_o\);
 
 -- Location: IOIBUF_X6_Y0_N18
@@ -24410,7 +24442,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => PS2_DAT_io,
+	i => ww_PS2_DAT_io,
 	o => \PS2_DAT_io~input_o\);
 
 -- Location: IOIBUF_X2_Y0_N75
@@ -24421,7 +24453,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => PS2_CLK2_io,
+	i => ww_PS2_CLK2_io,
 	o => \PS2_CLK2_io~input_o\);
 
 -- Location: IOIBUF_X2_Y0_N92
@@ -24432,7 +24464,7 @@ GENERIC MAP (
 	simulate_z_as => "z")
 -- pragma translate_on
 PORT MAP (
-	i => PS2_DAT2_io,
+	i => ww_PS2_DAT2_io,
 	o => \PS2_DAT2_io~input_o\);
 
 -- Location: LABCELL_X1_Y1_N0

@@ -103,7 +103,7 @@ entity DE1_SoC_top is
            TD_HS_i      : in std_logic;
            TD_RESET_N_o : out std_logic;
            TD_VS_i      : in std_logic;
-           
+
            -- VGA
            VGA_R_o       : out std_logic_vector(7 downto 0);
            VGA_G_o       : out std_logic_vector(7 downto 0);
@@ -113,7 +113,7 @@ entity DE1_SoC_top is
            VGA_BLANK_N_o : out std_logic;
            VGA_HS_o      : out std_logic;
            VGA_VS_o      : out std_logic;
-           
+
            -- DDR3 SDRAM
            HPS_DDR3_ADDR_o      : out std_logic_vector(14 downto 0);
            HPS_DDR3_BA_o        : out std_logic_vector(2 downto 0);
@@ -142,7 +142,7 @@ entity DE1_SoC_top is
            --HPS_ENET_RX_DV_i     : in std_logic;
            --HPS_ENET_TX_DATA_o   : out std_logic_vector(3 downto 0);
            --HPS_ENET_TX_EN_o     : out std_logic;
-           
+
            -- Flash
            --HPS_FLASH_DATA_io    : inout std_logic_vector(3 downto 0);
            --HPS_FLASH_DCLK_o     : out std_logic;
@@ -153,7 +153,7 @@ entity DE1_SoC_top is
 
            -- General Purpose I/O
            --HPS_GPIO_io          : inout std_logic_vector(1 downto 0);
-           
+
            -- I2C
            --HPS_I2C_CONTROL_io   : inout std_logic;
            --HPS_I2C1_SCLK_io     : inout std_logic;
@@ -199,15 +199,18 @@ entity DE1_SoC_top is
 end DE1_SoC_top;
 
 architecture top of DE1_SoC_top is
-    
+
     component qsys_system is
         port (
             ------------------------------------
             -- FPGA Side
             ------------------------------------
-        
+
             -- Global signals
-        
+				clk_clk                         : in   std_logic;                    						   -- clk
+				pio_sw_i_export                 : in   std_logic_vector(9 downto 0);                      -- pio_sw_i
+            pio_leds_o_export               : out  std_logic_vector(9 downto 0);                      -- pio_leds_o
+
             ------------------------------------
             -- HPS Side
             ------------------------------------
@@ -228,10 +231,10 @@ architecture top of DE1_SoC_top is
             memory_mem_odt                  : out   std_logic;                                        -- mem_odt
             memory_mem_dm                   : out   std_logic_vector(3 downto 0);                     -- mem_dm
             memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
-    
+
             -- Pushbutton
             hps_io_0_hps_io_gpio_inst_GPIO54  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO54
-    
+
             -- LED
             hps_io_0_hps_io_gpio_inst_GPIO53  : inout std_logic                     := 'X'              -- hps_io_gpio_inst_GPIO53
         );
@@ -248,9 +251,13 @@ begin
         ------------------------------------
         -- FPGA Side
         ------------------------------------
-    
+
+        clk_clk           => CLOCK_50_i,
+        pio_sw_i_export   => SW_i,
+        pio_leds_o_export => LEDR_o,
+
         -- Global signals
-        
+
         ------------------------------------
         -- HPS Side
         ------------------------------------
@@ -271,10 +278,10 @@ begin
         memory_mem_odt      => HPS_DDR3_ODT_o,
         memory_mem_dm       => HPS_DDR3_DM_o,
         memory_oct_rzqin    => HPS_DDR3_RZQ_i,
-    
+
         -- Pushbutton
         hps_io_0_hps_io_gpio_inst_GPIO54  => HPS_KEY_io,
-    
+
         -- LED
         hps_io_0_hps_io_gpio_inst_GPIO53  => HPS_LED_io
     );

@@ -63,6 +63,8 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="hps_io_0" internal="hps_0.hps_io" type="conduit" dir="end" />
+ <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface
    name="pio_leds_o"
    internal="pio_1.external_connection"

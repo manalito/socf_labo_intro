@@ -27,8 +27,8 @@
 
 #define HPS_GPIO1 (HPS_BRIDGE_BASE + HPS_GPIO1_BASE)
 
-#define HPS_GPIO1_54 0x1 << 25
-#define HPS_GPIO1_53 0x1 << 24
+#define HPS_GPIO1_54 (0x1 << 25)
+#define HPS_GPIO1_53 (0x1 << 24)
 #define GPIO_SWPORTA_DR  0x00
 #define GPIO_SWPORTA_DDR 0x04
 #define GPIO_EXT_PORTA   0X50
@@ -43,11 +43,8 @@ int main(void){
     /* Set Directions */
     /* set GPIO 53 as output */
     *gpio_swporta_ddr |= HPS_GPIO1_53;
-    /* test */
-    //*(int *)(0xFF709004) = 0x01000000;
     /* set GPIO 54 as input */
-    /*gpio_swporta_ddr &= ~HPS_GPIO1_54; /* ne fonctionne pas :( */
-    *(int *)(0xFF709004) &= ~0x02000000; /* fonctionne */
+    *gpio_swporta_ddr &= ~HPS_GPIO1_54;
 
     while(1) {
       /* read GPIO 54 input value and update GPIO 53 output (LED)  */

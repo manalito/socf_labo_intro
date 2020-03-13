@@ -207,9 +207,14 @@ architecture top of DE1_SoC_top is
             ------------------------------------
 
             -- Global signals
-				clk_clk                         : in   std_logic;                    						   -- clk
-				pio_sw_i_export                 : in   std_logic_vector(9 downto 0);                      -- pio_sw_i
-            pio_leds_o_export               : out  std_logic_vector(9 downto 0);                      -- pio_leds_o
+            clk_clk                         : in    std_logic;
+            pio_leds_o_export                : out   std_logic_vector(9 downto 0);                     -- export
+            pio_sw_i_export                  : in    std_logic_vector(9 downto 0)  := (others => 'X'); -- export
+            pio_key_o_export                 : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
+				pio_hex0_export                  : out   std_logic_vector(6 downto 0);                     -- export
+            pio_hex1_export                  : out   std_logic_vector(6 downto 0);
+				pio_hex2_export                  : out   std_logic_vector(6 downto 0);                     -- export
+            pio_hex3_export                  : out   std_logic_vector(6 downto 0);
 
             ------------------------------------
             -- HPS Side
@@ -233,12 +238,20 @@ architecture top of DE1_SoC_top is
             memory_oct_rzqin                : in    std_logic                     := 'X';             -- oct_rzqin
 
             -- Pushbutton
-            hps_io_0_hps_io_gpio_inst_GPIO54  : inout std_logic                     := 'X';             -- hps_io_gpio_inst_GPIO54
+            hps_io_0_hps_io_gpio_inst_GPIO54  : inout std_logic                   := 'X';             -- hps_io_gpio_inst_GPIO54
 
             -- LED
-            hps_io_0_hps_io_gpio_inst_GPIO53  : inout std_logic                     := 'X'              -- hps_io_gpio_inst_GPIO53
+            hps_io_0_hps_io_gpio_inst_GPIO53  : inout std_logic                   := 'X'              -- hps_io_gpio_inst_GPIO53
         );
     end component qsys_system;
+
+	 
+signal HEX3_s : std_logic_vector(6 downto 0);
+signal HEX2_s : std_logic_vector(6 downto 0);
+signal HEX1_s : std_logic_vector(6 downto 0);
+signal HEX0_s : std_logic_vector(6 downto 0);
+
+signal HEX3_0_s : std_logic_vector(31 downto 0);
 
 begin
 
@@ -246,17 +259,21 @@ begin
 --  HPS mapping
 ---------------------------------------------------------
 
+
     System : component qsys_system
     port map (
         ------------------------------------
         -- FPGA Side
         ------------------------------------
-
+		  
         clk_clk           => CLOCK_50_i,
         pio_sw_i_export   => SW_i,
         pio_leds_o_export => LEDR_o,
-
-        -- Global signals
+        pio_key_o_export  => KEY_i,
+        pio_hex0_export   => HEX0_o,
+		  pio_hex1_export   => HEX1_o,
+		  pio_hex2_export	  => HEX2_o,
+		  pio_hex3_export   => HEX3_o,    
 
         ------------------------------------
         -- HPS Side

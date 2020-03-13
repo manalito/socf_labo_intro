@@ -81,6 +81,19 @@ static short values_7seg[NB_VAL_7SEG] = {
     VAL_7SEG_C, VAL_7SEG_D, VAL_7SEG_E, VAL_7SEG_F,
 };
 
+/* This function a new value with reversed bits from 0 to n */
+int reverse_n_bits(int value, int n){
+	int i;
+	int new_value = 0;
+	if (n > 0 && n < 31) {
+		for(i = n - 1; i >= 0; --i) {
+			new_value |= (value & 0x1) << i;
+			value = value >> 0x1;
+		}
+	}
+    return new_value;
+}
+
 
 int main(void){
 
@@ -96,6 +109,8 @@ int main(void){
     volatile int *fpga_hex1 = (volatile int *)(LW_BRIDGE_BASE + FPGA_HEX1);
     volatile int *fpga_hex2 = (volatile int *)(LW_BRIDGE_BASE + FPGA_HEX2);
     volatile int *fpga_hex3 = (volatile int *)(LW_BRIDGE_BASE + FPGA_HEX3);
+    
+    int switchs_value;
 
     /* Set Directions */
     /* set GPIO 53 as output */
@@ -111,14 +126,18 @@ int main(void){
           *gpio_swporta_dr |= HPS_GPIO1_53;
       }*/
 		if(!(*fpga_keys & KEY0_MASK)) {
-			*fpga_ledr = *fpga_sw;
-			*fpga_hex0 = HEX_MASK & ~values_7seg[*fpga_sw &  SW3_0_MASK];
-			*fpga_hex1 = HEX_MASK & ~values_7seg[(*fpga_sw &  SW7_4_MASK) >> 4];
-			*fpga_hex2 = HEX_MASK & ~values_7seg[(*fpga_sw &  SW8_MASK) >> 8];
-			*fpga_hex3 = HEX_MASK & ~values_7seg[(*fpga_sw &  SW9_MASK) >> 9];
+			switchs_value = *fpga_sw;
+			*fpga_ledr = switchs_value;
+			*fpga_hex0 = HEX_MASK & ~values_7seg[switchs_value &  SW3_0_MASK];
+			*fpga_hex1 = HEX_MASK & ~values_7seg[(switchs_value &  SW7_4_MASK) >> 4];
+			*fpga_hex2 = HEX_MASK & ~values_7seg[(switchs_value &  SW8_MASK) >> 8];
+			*fpga_hex3 = HEX_MASK & ~values_7seg[(switchs_value &  SW9_MASK) >> 9];
 			
 		} else if (!(*fpga_keys & KEY1_MASK)) {
-			*fpga_ledr = *fpga_sw & SW3_0_MASK;
+			switchs_value = *fpga_sw;
+			*fpga_hex0 = HEX_MASK & ~values_7seg[reverse_n_bits(switchs_value & SW3_0_MASK, 4)];
+			*fpga_hex1 = HEX_MASK & ~values_7seg[reverse_n_bits((switchs_value &  SW7_4_MASK) >> 4 , 4)];
+			//*fpga_ledr = *fpga_sw & SW3_0_MASK;
 		}
     }
 

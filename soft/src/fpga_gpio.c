@@ -7,14 +7,14 @@
  * Reconfigurable Embedded Digital Systems
  *****************************************************************************************
  *
- * File                 : hps_gpio.c
+ * File                 : fpga_gpio.c
  * Author               : Aurélien Siu
- * Date                 : 26.02.2019
+ * Date                 : 18.03.2019
  *
- * Context              : SOCF tutorial lab
+ * Context              : SOCF lab
  *
  *****************************************************************************************
- * Brief: light HPS user LED up when HPS user button pressed, for DE1-SoC board
+ * Brief: access input/outputs via FPGA on DE1-SOC
  *
  *****************************************************************************************
  * Modifications :
@@ -25,21 +25,13 @@
 
 #include "address_map_arm.h"
 
-#define HPS_GPIO1 (HPS_BRIDGE_BASE + HPS_GPIO1_BASE)
-
-#define HPS_GPIO1_54 (0x1 << 25)
-#define HPS_GPIO1_53 (0x1 << 24)
 #define FPGA_SW   	0x00000000
-#define FPGA_LEDR 	0x00000020
-#define FPGA_KEYS 	0x00000040
-#define FPGA_HEX0 	0x00000060
-#define FPGA_HEX1 	0x00000080
-#define FPGA_HEX2	0x000000A0
-#define FPGA_HEX3   0x000000C0
-
-#define GPIO_SWPORTA_DR  0x00
-#define GPIO_SWPORTA_DDR 0x04
-#define GPIO_EXT_PORTA   0X50
+#define FPGA_LEDR 	0x00000010
+#define FPGA_KEYS 	0x00000020
+#define FPGA_HEX0 	0x00000030
+#define FPGA_HEX1 	0x00000040
+#define FPGA_HEX2	0x00000050
+#define FPGA_HEX3   0x00000060
 
 #define KEY0_MASK 0x1
 #define KEY1_MASK (0x1 << 1)
@@ -50,8 +42,8 @@
 
 #define SW3_0_MASK  0xF
 #define SW7_4_MASK (0xF << 4)
-#define SW8_MASK    0x1 << 8
-#define SW9_MASK    0x1 << 9
+#define SW8_MASK   (0x1 << 8)
+#define SW9_MASK   (0x1 << 9)
 
 #define VAL_7SEG_0 0x3f
 #define VAL_7SEG_1 0x06
@@ -112,19 +104,7 @@ int main(void){
     
     int switchs_value;
 
-    /* Set Directions */
-    /* set GPIO 53 as output */
-    //*gpio_swporta_ddr |= HPS_GPIO1_53;
-    /* set GPIO 54 as input */
-    //*gpio_swporta_ddr &= ~HPS_GPIO1_54;
-
     while(1) {
-		/* read GPIO 54 input value and update GPIO 53 output (LED)
-      if((*gpio_ext_swporta) & HPS_GPIO1_54) {
-         *gpio_swporta_dr &= ~HPS_GPIO1_53;
-      } else {
-          *gpio_swporta_dr |= HPS_GPIO1_53;
-      }*/
 		if(!(*fpga_keys & KEY0_MASK)) {
 			switchs_value = *fpga_sw;
 			*fpga_ledr = switchs_value;
@@ -137,7 +117,8 @@ int main(void){
 			switchs_value = *fpga_sw;
 			*fpga_hex0 = HEX_MASK & ~values_7seg[reverse_n_bits(switchs_value & SW3_0_MASK, 4)];
 			*fpga_hex1 = HEX_MASK & ~values_7seg[reverse_n_bits((switchs_value &  SW7_4_MASK) >> 4 , 4)];
-			//*fpga_ledr = *fpga_sw & SW3_0_MASK;
+			*fpga_hex2 = HEX_MASK & ~values_7seg[(switchs_value &  SW8_MASK) >> 8];
+			*fpga_hex3 = HEX_MASK & ~values_7seg[(switchs_value &  SW9_MASK) >> 9];
 		}
     }
 

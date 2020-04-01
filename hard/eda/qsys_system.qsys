@@ -41,6 +41,14 @@
          type = "int";
       }
    }
+   element pio_1.s1
+   {
+      datum baseAddress
+      {
+         value = "16";
+         type = "String";
+      }
+   }
    element pio_2
    {
       datum _sortIndex
@@ -49,11 +57,19 @@
          type = "int";
       }
    }
+   element pio_2.reset
+   {
+      datum _tags
+      {
+         value = "";
+         type = "String";
+      }
+   }
    element pio_2.s1
    {
       datum baseAddress
       {
-         value = "64";
+         value = "32";
          type = "String";
       }
    }
@@ -69,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "96";
+         value = "48";
          type = "String";
       }
    }
@@ -85,7 +101,7 @@
    {
       datum baseAddress
       {
-         value = "128";
+         value = "64";
          type = "String";
       }
    }
@@ -101,7 +117,7 @@
    {
       datum baseAddress
       {
-         value = "160";
+         value = "80";
          type = "String";
       }
    }
@@ -117,7 +133,7 @@
    {
       datum baseAddress
       {
-         value = "192";
+         value = "96";
          type = "String";
       }
    }
@@ -299,7 +315,7 @@
   <parameter name="F2SCLK_WARMRST_Enable" value="false" />
   <parameter name="F2SDRAM_Type" value="" />
   <parameter name="F2SDRAM_Width" value="" />
-  <parameter name="F2SINTERRUPT_Enable" value="false" />
+  <parameter name="F2SINTERRUPT_Enable" value="true" />
   <parameter name="F2S_Width" value="0" />
   <parameter name="FIX_READ_LATENCY" value="8" />
   <parameter name="FORCED_NON_LDC_ADDR_CMD_MEM_CK_INVERT" value="false" />
@@ -733,7 +749,7 @@
  </module>
  <module name="pio_1" kind="altera_avalon_pio" version="17.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="50" />
   <parameter name="direction" value="Output" />
@@ -746,14 +762,14 @@
   <parameter name="width" value="10" />
  </module>
  <module name="pio_2" kind="altera_avalon_pio" version="17.0" enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitClearingEdgeCapReg" value="true" />
   <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
+  <parameter name="captureEdge" value="true" />
   <parameter name="clockRate" value="50" />
   <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
+  <parameter name="edgeType" value="FALLING" />
+  <parameter name="generateIRQ" value="true" />
+  <parameter name="irqType" value="EDGE" />
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
@@ -761,7 +777,7 @@
  </module>
  <module name="pio_3" kind="altera_avalon_pio" version="17.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="50" />
   <parameter name="direction" value="Output" />
@@ -775,7 +791,7 @@
  </module>
  <module name="pio_4" kind="altera_avalon_pio" version="17.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="50" />
   <parameter name="direction" value="Output" />
@@ -789,7 +805,7 @@
  </module>
  <module name="pio_5" kind="altera_avalon_pio" version="17.0" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="true" />
+  <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
   <parameter name="clockRate" value="50" />
   <parameter name="direction" value="Output" />
@@ -830,7 +846,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="baseAddress" value="0x0010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -839,7 +855,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0040" />
+  <parameter name="baseAddress" value="0x0020" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -848,7 +864,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_3.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
+  <parameter name="baseAddress" value="0x0030" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -857,7 +873,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_4.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0080" />
+  <parameter name="baseAddress" value="0x0040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -866,7 +882,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_5.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00a0" />
+  <parameter name="baseAddress" value="0x0050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -875,7 +891,7 @@
    start="hps_0.h2f_lw_axi_master"
    end="pio_6.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00c0" />
+  <parameter name="baseAddress" value="0x0060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="17.0" start="clk_0.clk" end="pio_1.clk" />
@@ -890,6 +906,13 @@
    version="17.0"
    start="clk_0.clk"
    end="hps_0.h2f_lw_axi_clock" />
+ <connection
+   kind="interrupt"
+   version="17.0"
+   start="hps_0.f2h_irq0"
+   end="pio_2.irq">
+  <parameter name="irqNumber" value="0" />
+ </connection>
  <connection kind="reset" version="17.0" start="hps_0.h2f_reset" end="pio_1.reset" />
  <connection kind="reset" version="17.0" start="hps_0.h2f_reset" end="pio_0.reset" />
  <connection kind="reset" version="17.0" start="hps_0.h2f_reset" end="pio_2.reset" />

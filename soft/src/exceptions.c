@@ -28,6 +28,12 @@
 
 #include "address_map_arm.h"
 #include "defines.h"
+#include "exceptions.h"
+
+int *hex_3_0_array[] = {(int *)(LW_BRIDGE_BASE|FPGA_HEX0),
+                        (int *)(LW_BRIDGE_BASE|FPGA_HEX1),
+                        (int *)(LW_BRIDGE_BASE|FPGA_HEX2),
+                        (int *)(LW_BRIDGE_BASE|FPGA_HEX3)};
 
 // Define the IRQ exception handler
 void __attribute__ ((interrupt)) __cs3_isr_irq(void)
@@ -36,11 +42,20 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
 	 * TO DO
 	 **********/
 
-	// Read CPU Interface registers to determine which peripheral has caused an interrupt 
-	
-	// Handle the interrupt if it comes from the KEYs
+	/* Read CPU Interface registers to determine which peripheral has caused an interrupt
+	 * Read the ICCIAR from the CPU Interface in the GIC */
+	int interrupt_ID =*((int*) 0xFFFEC10C);
+    
+    // Handle the interrupt if it comes from the KEYs
+    if (interrupt_ID == 72) // check if interrupt is from the KEYs
+        pushbutton_ISR();
+    else
+        while (1); // if unexpected, then stay here
 
-	// Clear interrupt from the CPU Interface
+
+	/* Clear interrupt from the CPU Interface
+     * Write to the End of Interrupt Register (ICCEOIR) */
+    *((int*) 0xFFFEC110) = interrupt_ID;
 
 	return;
 } 
@@ -76,8 +91,8 @@ void __attribute__ ((interrupt)) __cs3_isr_fiq (void)
     while(1);
 }
 
-/* 
- * Initialize the banked stack pointer register for IRQ mode
+/*
+* Initialize the banked stack pointer register for IRQ mode
 */
 void set_A9_IRQ_stack(void)
 {
@@ -93,12 +108,75 @@ void set_A9_IRQ_stack(void)
 	mode = INT_DISABLE | SVC_MODE;
 	asm("msr cpsr, %[ps]" : : [ps] "r" (mode));
 }
-
-/* 
- * Turn on interrupts in the ARM processor
+/*
+* Turn on interrupts in the ARM processor
 */
 void enable_A9_interrupts(void)
 {
-	uint32_t status = SVC_MODE | INT_ENABLE;
-	asm("msr cpsr, %[ps]" : : [ps]"r"(status));
+    uint32_t status = SVC_MODE | INT_ENABLE;
+    asm("msr cpsr, %[ps]" : : [ps]"r"(status));
+}
+
+/*
+* Turn off interrupts in the ARM processor
+*/
+void disable_A9_interrupts(void)
+{
+    uint32_t status = SVC_MODE | INT_DISABLE;
+    asm("msr cpsr, %[ps]" : : [ps]"r"(status));
+}
+
+
+/********************************************************************
+* Pushbutton - Interrupt Service Routine
+*
+* This routine checks which KEY has been pressed. It writes from HEX3 to HEX0
+*******************************************************************/
+void pushbutton_ISR( void )
+{
+    /* KEY base address */
+    volatile int *KEY_ptr = (int *) (LW_BRIDGE_BASE | FPGA_KEYS);
+    /* HEX display base address */
+    volatile int *HEX3_HEX0_ptr = (int *) (LW_BRIDGE_BASE | FPGA_HEX0);
+    
+    int press, HEX_bits;
+    press = *(KEY_ptr + 3); // read the pushbutton interrupt register
+    
+    *(KEY_ptr + 3) = press; // Clear the interrupt
+    
+    if (press & KEY0_MASK)  {   // KEY0
+        HEX_bits = 0x00;
+        *HEX3_HEX0_ptr = HEX_bits;
+    }else if (press & KEY2_MASK) // KEY2
+        hex_3_0_rotate_right();
+    else if (press & KEY3_MASK) // KEY3
+        hex_3_0_rotate_left();
+    
+    return;
+}
+
+/* This function rotates to right characters displayed from HEX3 to HEX0 */
+void hex_3_0_rotate_right(void) {
+	int i;
+    int temp = *hex_3_0_array[0];
+    
+    for(i = 0; i < 3; ++i) {
+        *hex_3_0_array[i] = *hex_3_0_array[i+1];
+    }
+    
+    *hex_3_0_array[3] = temp;
+}
+
+/* This function rotates to left characters displayed from HEX3 to HEX0 */
+void hex_3_0_rotate_left(void){
+    
+	int i;
+    int temp = *hex_3_0_array[3];
+    
+    for(i = 3; i > 0; --i) {
+        *hex_3_0_array[i] = *hex_3_0_array[i-1];
+    }
+    
+    *hex_3_0_array[0] = temp;
+    
 }

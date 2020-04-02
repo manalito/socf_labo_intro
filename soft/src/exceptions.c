@@ -38,13 +38,10 @@ int *hex_3_0_array[] = {(int *)(LW_BRIDGE_BASE|FPGA_HEX0),
 // Define the IRQ exception handler
 void __attribute__ ((interrupt)) __cs3_isr_irq(void)
 {
-	/***********
-	 * TO DO
-	 **********/
 
 	/* Read CPU Interface registers to determine which peripheral has caused an interrupt
 	 * Read the ICCIAR from the CPU Interface in the GIC */
-	int interrupt_ID =*((int*) 0xFFFEC10C);
+	int interrupt_ID =*((int*) (MPCORE_GIC_CPUIF|ICCIAR));
     
     // Handle the interrupt if it comes from the KEYs
     if (interrupt_ID == 72) // check if interrupt is from the KEYs
@@ -55,7 +52,7 @@ void __attribute__ ((interrupt)) __cs3_isr_irq(void)
 
 	/* Clear interrupt from the CPU Interface
      * Write to the End of Interrupt Register (ICCEOIR) */
-    *((int*) 0xFFFEC110) = interrupt_ID;
+    *((int*) (MPCORE_GIC_CPUIF|ICCEOIR)) = interrupt_ID;
 
 	return;
 } 
@@ -136,18 +133,12 @@ void pushbutton_ISR( void )
 {
     /* KEY base address */
     volatile int *KEY_ptr = (int *) (LW_BRIDGE_BASE | FPGA_KEYS);
-    /* HEX display base address */
-    volatile int *HEX3_HEX0_ptr = (int *) (LW_BRIDGE_BASE | FPGA_HEX0);
     
-    int press, HEX_bits;
-    press = *(KEY_ptr + 3); // read the pushbutton interrupt register
+    int press = *(KEY_ptr + 3); // read the pushbutton interrupt register
     
     *(KEY_ptr + 3) = press; // Clear the interrupt
     
-    if (press & KEY0_MASK)  {   // KEY0
-        HEX_bits = 0x00;
-        *HEX3_HEX0_ptr = HEX_bits;
-    }else if (press & KEY2_MASK) // KEY2
+    if (press & KEY2_MASK) // KEY2
         hex_3_0_rotate_right();
     else if (press & KEY3_MASK) // KEY3
         hex_3_0_rotate_left();

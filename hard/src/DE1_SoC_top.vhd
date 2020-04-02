@@ -245,13 +245,6 @@ architecture top of DE1_SoC_top is
         );
     end component qsys_system;
 
-	 
-signal HEX3_s : std_logic_vector(6 downto 0);
-signal HEX2_s : std_logic_vector(6 downto 0);
-signal HEX1_s : std_logic_vector(6 downto 0);
-signal HEX0_s : std_logic_vector(6 downto 0);
-
-signal HEX3_0_s : std_logic_vector(31 downto 0);
 
 begin
 

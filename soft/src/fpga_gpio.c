@@ -88,10 +88,6 @@ int reverse_n_bits(int value, int n){
 
 
 int main(void){
-
-    volatile int *gpio_swporta_dr  = (volatile int *)(HPS_GPIO1 + GPIO_SWPORTA_DR);
-    volatile int *gpio_swporta_ddr = (volatile int *)(HPS_GPIO1 + GPIO_SWPORTA_DDR);
-    volatile int *gpio_ext_swporta = (volatile int *)(HPS_GPIO1 + GPIO_EXT_PORTA);
     
     volatile int *fpga_sw   = (volatile int *)(LW_BRIDGE_BASE + FPGA_SW);
     volatile int *fpga_ledr = (volatile int *)(LW_BRIDGE_BASE + FPGA_LEDR);
@@ -123,6 +119,4 @@ int main(void){
     }
 
     return 0;
-
-
 }

@@ -57,6 +57,8 @@ int main(void)
     
     int switchs_value;
 
+    
+    /* look at KEY1 and KEY0 buttons by polling */
     while(1) {
 		if(!(*fpga_keys & KEY0_MASK)) {
 			switchs_value = *fpga_sw;
@@ -79,8 +81,7 @@ int main(void)
 /* setup the KEY interrupts in the FPGA */
 void config_KEYs()
 {
-    volatile int * KEY_ptr = (int *) (LW_BRIDGE_BASE | FPGA_KEYS);
-    /* KEY base address */
+    volatile int * KEY_ptr = (int *) (LW_BRIDGE_BASE | FPGA_KEYS); /* KEY base address */
     *(KEY_ptr + 2) = 0xF; /* enable interrupts for all  KEY3 and KEY2 */
 }
 
